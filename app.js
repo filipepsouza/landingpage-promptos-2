@@ -494,6 +494,11 @@
       });
     });
 
+    const earlyTriggerSection =
+      document.getElementById('entregaveis') ||
+      document.getElementById('resultados') ||
+      offerSection;
+
     if ('IntersectionObserver' in window) {
       const offerObserver = new IntersectionObserver(
         (entries) => {
@@ -504,9 +509,12 @@
             }
           });
         },
-        { threshold: 0.25 }
+        { threshold: 0.15 }
       );
-      offerObserver.observe(offerSection);
+      offerObserver.observe(earlyTriggerSection);
+      if (earlyTriggerSection !== offerSection) {
+        offerObserver.observe(offerSection);
+      }
     }
   }
 
