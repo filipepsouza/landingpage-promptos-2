@@ -7,24 +7,24 @@
   <meta name="color-scheme" content="dark" />
 
   <!-- SEO & Social Meta (Puxado do Padrão Oficial PromptOS) -->
-  <title>PromptOS Essencial — Apresentação Oficial da Central de Prompts e Ferramentas Práticas</title>
-  <meta name="description" content="O impulso definitivo para você criar conteúdo, vender e resolver tarefas do trabalho usando IA. Encontre, personalize em poucos campos e copie prompts prontos para ChatGPT, Gemini ou Claude. Pagamento único, sem mensalidade obrigatória." />
+  <title>PromptOS Essencial — Prompts Prontos e Ferramentas para Resolver Tarefas com IA</title>
+  <meta name="description" content="Você tem tarefas para resolver. Não precisa criar cada prompt do zero. Prompts prontos e ferramentas para criar conteúdos, preparar ações de vendas e resolver tarefas com IA." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://promptos.com.br/essencial" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:title" content="PromptOS Essencial — O Impulso Definitivo para Criar, Vender e Resolver Tarefas com IA" />
-  <meta property="og:description" content="Central organizada com 150 prompts, 12 kits por profissão e 8 mini ferramentas guiadas. Personalize em poucos campos, copie e use no ChatGPT, Gemini ou Claude." />
+  <meta property="og:title" content="PromptOS Essencial — Você tem tarefas para resolver. Não precisa criar cada prompt do zero." />
+  <meta property="og:description" content="Prompts prontos e ferramentas para criar conteúdos, preparar ações de vendas e resolver tarefas com IA. Encontre, adapte e coloque em prática." />
   <meta property="og:url" content="https://promptos.com.br/essencial" />
   <meta property="og:image" content="./assets/og-promptos-essencial.svg" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="PromptOS Essencial — Sua Central Organizada de Prompts" />
-  <meta name="twitter:description" content="Encontre, personalize e copie instruções claras para usar no ChatGPT, Gemini ou Claude. Pagamento único, sem mensalidade obrigatória." />
-  <meta name="twitter:image" content="./assets/og-promptos-essencial.svg" />
+  <meta name="twitter:title" content="PromptOS Essencial — Prompts Prontos + Ferramentas para IA" />
+  <meta name="twitter:description" content="Encontre prompts preparados para diferentes tarefas, personalize o pedido e coloque em prática no ChatGPT, Gemini ou Claude." />
+  <meta property="twitter:image" content="./assets/og-promptos-essencial.svg" />
 
   <!-- Favicon & Apple Touch Icon (Badge Neon Oficial PromptOS) -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png?v=3" />
@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="./styles.css?v=20261019v2" />
+  <link rel="stylesheet" href="./styles.css?v=20261021e" />
 </head>
 <body>
   <!-- Skip Link -->
@@ -68,6 +68,10 @@
           <span>Acessar Prompt</span>
         </a>
       </nav>
+    </div>
+    <!-- Barra de LED de Progresso de Rolagem (mesmo padrão LED vermelho dos cards) -->
+    <div class="header-scroll-led" aria-hidden="true">
+      <span class="header-scroll-led__bar" id="header-scroll-led-bar"></span>
     </div>
   </header>
 
@@ -143,18 +147,16 @@
 
         <!-- Headline Principal no Estilo da Referência -->
         <h1 class="hero-showcase__title scroll-reveal" id="hero-title">
-          O <span class="text-neon-red">IMPULSO DEFINITIVO</span> PARA VOCÊ
-          <span class="text-neon-red">CRIAR CONTEÚDO, VENDER</span> E RESOLVER TAREFAS
-          <span class="text-neon-red">USANDO O CHATGPT</span>
+          VOCÊ TEM <span class="text-neon-red">TAREFAS PARA RESOLVER.</span> NÃO PRECISA CRIAR CADA <span class="text-neon-red">PROMPT DO ZERO.</span>
         </h1>
 
         <p class="hero-showcase__subtitle scroll-reveal">
-          Tenha acesso a uma <strong class="text-neon-red">Central completa de Prompts estruturados e personalizáveis</strong> para ChatGPT, Gemini e Claude, que faz o papel de um Estrategista, Copywriter e Equipe de Produtividade no seu dia a dia.
+          <strong class="text-neon-red">Prompts prontos e ferramentas</strong> para criar conteúdos, preparar ações de vendas e resolver tarefas com IA. <strong class="text-white">Encontre, adapte e coloque em prática.</strong>
         </p>
 
         <div class="cta-glow-wrap scroll-reveal">
           <a href="#oferta-final" class="btn-glow-red">
-            <span>IMPULSIONAR MEUS RESULTADOS</span>
+            <span>QUERO ACESSAR O PROMPTOS →</span>
           </a>
         </div>
       </div>
@@ -167,9 +169,9 @@
       <div class="container">
         <div class="section-header-center scroll-reveal">
           <h2 class="display-heading" id="title-ecossistema">
-            TRANSFORME SUA IA EM UMA <span class="text-neon-red">MÁQUINA DE EXECUÇÃO E VENDAS</span> PARA O SEU TRABALHO
+            SUA IA PODE FAZER MUITA COISA. <span class="text-neon-red">MAS VOCÊ NÃO PRECISA DESCOBRIR TUDO SOZINHO.</span>
           </h2>
-          <p class="bracket-subtitle">[Sem Precisar Virar Expert em Engenharia de Prompts]</p>
+          <p class="bracket-subtitle">[Encontre prompts preparados para diferentes tarefas • Escolha, personalize e use]</p>
         </div>
 
         <!-- Composição Multi-Telas Fiel à Referência -->
@@ -197,7 +199,7 @@
               <div class="eco-screen__grid">
                 <div class="eco-mini-item">Script Consultivo de WhatsApp</div>
                 <div class="eco-mini-item">Quebra de Objeções de Preço</div>
-                <div class="eco-mini-item">Estrutura de Oferta Irresistível</div>
+                <div class="eco-mini-item">Estrutura de Oferta Comercial</div>
                 <div class="eco-mini-item">Follow-up de Recuperação</div>
               </div>
             </div>
@@ -208,10 +210,10 @@
                 <strong>🎬 Criação de Conteúdo</strong>
               </div>
               <div class="eco-screen__grid">
-                <div class="eco-mini-item">Roteiros de Reels com Retenção</div>
-                <div class="eco-mini-item">Carrosséis Educativos e Vendedores</div>
+                <div class="eco-mini-item">Roteiros de Reels e Vídeos</div>
+                <div class="eco-mini-item">Carrosséis Educativos e Comerciais</div>
                 <div class="eco-mini-item">Sequência de Stories de Engajamento</div>
-                <div class="eco-mini-item">Fábrica de Ganchos Virais</div>
+                <div class="eco-mini-item">Estruturas de Ganchos e Aberturas</div>
               </div>
             </div>
 
@@ -221,7 +223,7 @@
                 <strong>⚙️ Gestão e Produtividade</strong>
               </div>
               <div class="eco-screen__grid">
-                <div class="eco-mini-item">Proposta Comercial em 5 Minutos</div>
+                <div class="eco-mini-item">Proposta Comercial Estruturada</div>
                 <div class="eco-mini-item">Resumo Executivo e Planos de Ação</div>
                 <div class="eco-mini-item">Padronização de Atendimento</div>
                 <div class="eco-mini-item">Organização de Rotina Semanal</div>
@@ -243,7 +245,7 @@
                 <span>PromptOS Mobile</span>
               </div>
               <div class="eco-phone__body">
-                <div class="eco-phone__title">Central Organizada de Prompts Prontos</div>
+                <div class="eco-phone__title">Biblioteca Organizada de Prompts Prontos</div>
                 <div class="eco-phone__item">✓ Busca rápida por tarefa</div>
                 <div class="eco-phone__item">✓ Campos personalizáveis</div>
                 <div class="eco-phone__item">✓ Copiar com 1 toque</div>
@@ -259,14 +261,14 @@
                 <strong>PromptOS Essencial • Biblioteca Guiada</strong>
               </div>
               <div class="eco-tablet__cards">
-                <div class="eco-prompt-chip">📌 Roteiros de Reels que Retêm</div>
+                <div class="eco-prompt-chip">📌 Roteiros de Reels e Vídeos</div>
                 <div class="eco-prompt-chip">💬 Abordagem Comercial WhatsApp</div>
-                <div class="eco-prompt-chip">🎯 Bio & Posicionamento em 3s</div>
+                <div class="eco-prompt-chip">🎯 Bio & Posicionamento Comercial</div>
                 <div class="eco-prompt-chip">🔥 Sequência de Stories de Venda</div>
                 <div class="eco-prompt-chip">📊 Carrossel de Autoridade</div>
                 <div class="eco-prompt-chip">💼 Proposta Comercial B2B</div>
-                <div class="eco-prompt-chip">⚡ Fábrica de 30 Ideias de Posts</div>
-                <div class="eco-prompt-chip">🛡️ Quebra de Objeções no Direct</div>
+                <div class="eco-prompt-chip">⚡ Ideias e Pautas de Conteúdo</div>
+                <div class="eco-prompt-chip">🛡️ Respostas para Objeções</div>
               </div>
             </div>
 
@@ -289,19 +291,18 @@
     </section>
 
     <!-- ===================================================================
-         SEÇÃO 03 — DE 1H PARA 1 MINUTO + 7 CARDS COM ÍCONE NO CANTO
+         SEÇÃO 03 — DORES DO PÚBLICO + 7 CARDS COM ÍCONE NO CANTO
          =================================================================== -->
     <section class="section section--black-glow" id="entregaveis" aria-labelledby="title-entregaveis">
       <div class="container">
         <div class="section-header-center scroll-reveal">
           <h2 class="display-heading" id="title-entregaveis">
-            SE ANTES VOCÊ LEVAVA 1H PARA CRIAR OU ESCREVER DO ZERO,
-            <span class="text-neon-red">AGORA VOCÊ PRECISA DE APENAS 1 MINUTO!</span>
+            QUANTAS VEZES VOCÊ ABRIU A IA
+            <span class="text-neon-red">E ACABOU FAZENDO TUDO NA TENTATIVA?</span>
           </h2>
           <p class="section-subcopy">
-            <span class="text-neon-red">Só precisa escolher a tarefa, preencher seu contexto, copiar e colar.</span>
-            Chega de perder horas tentando descobrir o que pedir para a IA — agora você tem uma central completa de conteúdo, vendas e rotina em um único lugar.
-            <strong class="text-neon-red block-mt">Com o PromptOS Essencial você:</strong>
+            Você sabe o que precisa fazer. Mas, entre escrever o pedido, explicar novamente e ajustar a resposta, uma tarefa simples pode acabar tomando mais tempo do que deveria.
+            <strong class="text-neon-red block-mt">O PromptOS oferece um ponto de partida mais prático para tudo isso.</strong>
           </p>
         </div>
 
@@ -316,9 +317,9 @@
                 <polygon points="10,12 15,14.5 10,17" fill="currentColor"/>
               </svg>
             </div>
-            <div class="feature-badge-card__pill-title">CRIA REELS E VÍDEOS</div>
+            <div class="feature-badge-card__pill-title">NÃO SABE POR ONDE COMEÇAR</div>
             <p class="feature-badge-card__desc">
-              Roteiros de vídeos curtos que prendem a atenção nos primeiros 3 segundos, com dicas práticas e chamadas de ação adaptadas ao seu nicho.
+              Você tem a ideia, mas trava na hora de transformar aquilo em um pedido.
             </p>
           </article>
 
@@ -330,9 +331,9 @@
                 <path d="M4 8v10a2 2 0 0 0 2 2h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
               </svg>
             </div>
-            <div class="feature-badge-card__pill-title">CRIA CARROSSÉIS</div>
+            <div class="feature-badge-card__pill-title">RECEBE RESPOSTAS GENÉRICAS</div>
             <p class="feature-badge-card__desc">
-              De educativos a vendedores: transforme qualquer ideia ou serviço em uma sequência lógica de slides que seu público salva e compartilha.
+              A IA responde, mas falta contexto para chegar perto do resultado esperado.
             </p>
           </article>
 
@@ -344,9 +345,9 @@
                 <path d="M12 8.5v7M8.5 12h7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
               </svg>
             </div>
-            <div class="feature-badge-card__pill-title">CRIA STORIES E SEQUÊNCIAS</div>
+            <div class="feature-badge-card__pill-title">PRECISA EXPLICAR TUDO DE NOVO</div>
             <p class="feature-badge-card__desc">
-              Sequências de stories planejadas para gerar conversa, responder objeções e manter sua audiência acompanhando até o convite final.
+              Você reformula o mesmo pedido várias vezes até conseguir algo aproveitável.
             </p>
           </article>
 
@@ -358,9 +359,9 @@
                 <path d="M12 9.5v6M9.8 11.2c0-1 .9-1.7 2.2-1.7s2.2.7 2.2 1.7c0 1.8-4.4 1.2-4.4 3.1 0 1 .9 1.7 2.2 1.7s2.2-.7 2.2-1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
               </svg>
             </div>
-            <div class="feature-badge-card__pill-title">CRIA OFERTAS E SCRIPTS</div>
+            <div class="feature-badge-card__pill-title">PERDE BOAS IDEIAS</div>
             <p class="feature-badge-card__desc">
-              Textos comerciais, abordagens de WhatsApp e argumentos persuasivos que transformam seguidores e contatos em clientes reais.
+              Comandos interessantes ficam espalhados entre conversas e anotações.
             </p>
           </article>
 
@@ -372,9 +373,9 @@
                 <path d="M9 9h6M9 13h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </div>
-            <div class="feature-badge-card__pill-title">CRIA E-BOOKS E PROPOSTAS</div>
+            <div class="feature-badge-card__pill-title">GASTA TEMPO DESNECESSÁRIO</div>
             <p class="feature-badge-card__desc">
-              Estruturas completas de materiais ricos, iscas digitais e propostas comerciais profissionais que agregam valor imediato ao seu trabalho.
+              Parte do seu tempo vai para descobrir como pedir, em vez de avançar na tarefa.
             </p>
           </article>
 
@@ -386,9 +387,9 @@
                 <path d="M7 10h10M7 14h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
               </svg>
             </div>
-            <div class="feature-badge-card__pill-title">CRIA LEGENDAS E ANÚNCIOS</div>
+            <div class="feature-badge-card__pill-title">NÃO APROVEITA AS POSSIBILIDADES</div>
             <p class="feature-badge-card__desc">
-              Descrições envolventes e textos de anúncios que fazem seu público parar o scroll, ler até o final e tomar ação imediata.
+              Você sabe que a IA pode ajudar em mais situações, mas nem sempre sabe quais comandos utilizar.
             </p>
           </article>
 
@@ -400,16 +401,16 @@
                 <path d="M5 20c0-3.8 3.1-6.5 7-6.5s7 2.7 7 6.5" fill="currentColor"/>
               </svg>
             </div>
-            <div class="feature-badge-card__pill-title">CRIA BIO E POSICIONAMENTO</div>
+            <div class="feature-badge-card__pill-title">COMEÇA SEMPRE DO ZERO</div>
             <p class="feature-badge-card__desc">
-              Estruture sua apresentação profissional, linha editorial e rotina operacional para transmitir autoridade desde o primeiro contato.
+              Cada nova tarefa parece exigir um novo processo de tentativa e erro.
             </p>
           </article>
         </div>
 
         <!-- Bloco "COMO FUNCIONA? CTRL+C / CTRL+V" integrado como na referência -->
         <div class="ctrl-how-block scroll-reveal" id="como-funciona">
-          <h3 class="ctrl-how-block__title">COMO FUNCIONA?</h3>
+          <h3 class="ctrl-how-block__title">DO QUE VOCÊ PRECISA FAZER AO PROMPT QUE VAI USAR.</h3>
 
           <div class="ctrl-keys-stage">
             <div class="ctrl-keys-rows">
@@ -451,8 +452,8 @@
           </div>
 
           <p class="ctrl-how-block__caption">
-            <span class="text-neon-red">PERSONALIZE, COPIE E COLE</span> TODO O NOSSO ARSENAL DE PROMPTS QUE FAZ VOCÊ
-            <span class="text-neon-red">PRODUZIR, ATENDER E VENDER TODOS OS DIAS!</span>
+            <span class="text-neon-red">ESCOLHA SUA TAREFA, ENCONTRE UM PROMPT E PERSONALIZE O PEDIDO.</span> COPIE E UTILIZE NA FERRAMENTA DE IA COMPATÍVEL —
+            <span class="text-neon-red">VOCÊ CONTINUA NO CONTROLE, COM UM PEDIDO BEM PREPARADO.</span>
           </p>
         </div>
       </div>
@@ -467,74 +468,84 @@
           <svg class="section-pill-banner__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span id="title-resultados"><strong>NA PRÁTICA</strong> • APLICAÇÕES DO PROMPTOS</span>
+          <span><strong>VEJA NA PRÁTICA</strong></span>
+        </div>
+
+        <div class="section-header-center scroll-reveal">
+          <h2 class="display-heading" id="title-resultados">
+            VEJA O QUE MUDA QUANDO VOCÊ COMEÇA COM UM <span class="text-neon-red">PEDIDO BEM PREPARADO.</span>
+          </h2>
+          <p class="section-subcopy">
+            Um bom ponto de partida ajuda você a explicar melhor o que precisa, incluir informações importantes e orientar a IA para a tarefa desejada.
+            <strong class="text-neon-red block-mt">Não é sobre escrever o prompt mais longo. É sobre fornecer as informações certas.</strong>
+          </p>
         </div>
 
         <!-- Cards estilo Chat / WhatsApp / Direct demonstrando o uso prático -->
         <div class="chat-proof-grid">
           <!-- Card Chat 1 (Estilo WhatsApp Light) -->
           <article class="chat-card chat-card--wa interactive-card scroll-reveal">
-            <div class="chat-card__tag">Aplicação 01 • Bio & Posicionamento</div>
+            <div class="chat-card__tag">Exemplo 01 • Bio & Posicionamento</div>
             <div class="wa-bubble">
-              <p>Cara... a diferença que deu no meu perfil e na clareza da minha oferta depois que apliquei o prompt de Posicionamento e Bio não tá escrita.</p>
+              <p>Antes eu pedia apenas "crie uma bio para meu perfil" e recebia frases genéricas que não explicavam meu trabalho.</p>
               <span class="wa-time">09:42</span>
             </div>
             <div class="wa-bubble">
-              <p>Eu só preenchi os 3 campos do meu serviço, copiei pro ChatGPT e ele já entregou a bio, os destaques e o script de boas-vindas prontinhos 🔥</p>
+              <p>Com a estrutura guiada de Posicionamento e Bio, preenchi meu serviço, público e objetivo. O pedido já orientou a IA sobre promessa, destaques e chamada de ação.</p>
               <span class="wa-time">09:43</span>
             </div>
           </article>
 
           <!-- Card Chat 2 (Estilo WhatsApp com Resposta) -->
           <article class="chat-card chat-card--wa interactive-card scroll-reveal">
-            <div class="chat-card__tag">Aplicação 02 • Sequência Comercial & WhatsApp</div>
+            <div class="chat-card__tag">Exemplo 02 • Abordagem Comercial & WhatsApp</div>
             <div class="wa-bubble">
-              <p>Passando pra registrar: usei o Kit Comercial + sequência de Stories com chamada pro WhatsApp.</p>
+              <p>Precisava preparar mensagens para responder clientes no WhatsApp sem parecer texto automático.</p>
               <span class="wa-time">10:59</span>
             </div>
             <div class="wa-bubble wa-bubble--out">
               <div class="wa-reply-box">
-                <strong>Equipe | PromptOS Essencial</strong>
-                <span>Show! Como foi a aplicação aí na rotina?</span>
+                <strong>Estrutura | PromptOS Essencial</strong>
+                <span>Campos de contexto, oferta e principais dúvidas</span>
               </div>
-              <p>Ficou natural demais, sem cara de robô! ✓✓</p>
+              <p>Pedido adaptado ao contexto real do atendimento ✓✓</p>
               <span class="wa-time">11:01</span>
             </div>
             <div class="wa-bubble">
-              <p>Em poucos minutos montei toda a sequência de abordagem e quebra de objeção. Economizou horas que eu perdia travado na frente da tela.</p>
+              <p>Em vez de começar do zero, usei a base de atendimento consultivo para organizar acolhimento, apresentação de valor e resposta para objeções.</p>
               <span class="wa-time">11:02</span>
             </div>
           </article>
 
           <!-- Card Chat 3 (Painel de Métricas + Resultado de Conteúdo) -->
           <article class="chat-card chat-card--wa interactive-card scroll-reveal">
-            <div class="chat-card__tag">Aplicação 03 • Consistência e Escala de Conteúdo</div>
+            <div class="chat-card__tag">Exemplo 03 • Planejamento de Conteúdo</div>
             <div class="wa-metrics-panel">
               <div class="wa-metrics-panel__top">
-                <strong class="wa-metrics-panel__big">30 Dias</strong>
+                <strong class="wa-metrics-panel__big">Pauta Guiada</strong>
                 <span>Planejamento de Conteúdo & Vendas</span>
-                <small class="wa-metrics-panel__gain">+10x velocidade de execução com campos guiados</small>
+                <small class="wa-metrics-panel__gain">Estrutura com campos personalizáveis para sua rotina</small>
               </div>
               <div class="wa-metrics-panel__rows">
-                <div><span>Roteiros & Reels estruturados</span><strong>Prontos</strong></div>
-                <div><span>Scripts de abordagem WhatsApp</span><strong>Prontos</strong></div>
-                <div><span>Tempo médio por tarefa</span><strong>~1 min</strong></div>
+                <div><span>Roteiros & Reels estruturados</span><strong>Prontos para adaptar</strong></div>
+                <div><span>Scripts de abordagem WhatsApp</span><strong>Prontos para adaptar</strong></div>
+                <div><span>Ponto de partida por tarefa</span><strong>Organizado</strong></div>
               </div>
             </div>
             <div class="wa-bubble">
-              <p>Comecei um projeto do zero e já deixei toda a pauta da semana, descrições, roteiros de vídeo e scripts de atendimento prontos num único turno!</p>
+              <p>Com os comandos organizados por objetivo, fica muito mais simples reunir pautas da semana, roteiros de vídeo e mensagens comerciais em um só lugar.</p>
               <span class="wa-time">15:44</span>
             </div>
           </article>
 
           <!-- Card Chat 4 (Estilo Direct Dark Mode) -->
           <article class="chat-card chat-card--dm interactive-card scroll-reveal">
-            <div class="chat-card__tag chat-card__tag--dark">Aplicação 04 • Clareza para Iniciantes e Avançados</div>
+            <div class="chat-card__tag chat-card__tag--dark">Exemplo 04 • Campos Guiados para Adaptar</div>
             <div class="dm-bubble">
-              <p>O melhor dos prompts do PromptOS é que além de serem práticos e personalizáveis pro meu nicho, já vem a orientação exata do que preencher em cada campo.</p>
+              <p>Cada prompt indica exatamente quais informações você pode preencher para adaptar o pedido ao seu nicho, produto ou serviço.</p>
             </div>
             <div class="dm-bubble">
-              <p>Para quem não sabia por onde começar no ChatGPT, ficou simples demais criar conteúdo e propostas de alto valor.</p>
+              <p>Assim você não precisa adivinhar como começar no ChatGPT, Gemini ou Claude quando surge uma nova tarefa.</p>
             </div>
             <div class="dm-footer">
               <span class="dm-heart">❤️</span>
@@ -544,19 +555,19 @@
 
           <!-- Card Chat 5 (Estilo Direct Dark Mode) -->
           <article class="chat-card chat-card--dm interactive-card scroll-reveal">
-            <div class="chat-card__tag chat-card__tag--dark">Aplicação 05 • IA Configurada para o Negócio</div>
+            <div class="chat-card__tag chat-card__tag--dark">Exemplo 05 • Pedido Completo vs. Pergunta Solta</div>
             <div class="dm-bubble">
-              <p>Impressionante como o ChatGPT muda da água pro vinho quando você usa um comando estruturado do PromptOS em vez de fazer pergunta solta.</p>
+              <p>Quando você inclui papel, contexto, objetivo e formato desejado, a ferramenta de IA recebe instruções claras do que desenvolver.</p>
             </div>
             <div class="dm-bubble">
-              <p>A resposta já sai no tom certo, dividida em tópicos e pronta pra mandar pro cliente ou publicar!</p>
+              <p>Você parte de uma base preparada e ajusta apenas os detalhes específicos do seu trabalho.</p>
             </div>
           </article>
         </div>
 
         <div class="cta-glow-wrap scroll-reveal">
           <a href="#oferta-final" class="btn-glow-red">
-            <span>QUERO TER ESSA PRATICIDADE</span>
+            <span>QUERO TER ACESSO AOS PROMPTS →</span>
           </a>
         </div>
       </div>
@@ -569,19 +580,22 @@
       <div class="container">
         <div class="section-pill-banner scroll-reveal">
           <img src="./assets/favicon-32.png" alt="" width="20" height="20" class="section-pill-banner__logo" />
-          <span>POR DENTRO DO <strong>PROMPTOS ESSENCIAL</strong></span>
+          <span><strong>CONTEÚDO, VENDAS E MUITO MAIS</strong></span>
         </div>
 
         <div class="section-header-center scroll-reveal">
           <p class="sample-eyebrow">
-            ISSO É SÓ <strong class="text-white">UMA AMOSTRA DOS PROMPTS</strong><br />
-            QUE VOCÊ VAI <span class="text-neon-red">RECEBER NA CENTRAL</span>
+            ENCONTRE RECURSOS PARA O QUE <strong class="text-white">VOCÊ PRECISA FAZER</strong>,<br />
+            SEM FICAR PROCURANDO <span class="text-neon-red">COMANDOS ALEATÓRIOS</span>
           </p>
           <div class="down-arrow-anim" aria-hidden="true">↓</div>
           <h2 class="display-heading" id="title-por-dentro">
-            PROMPTS HIPER ESPECÍFICOS<br />
-            <span class="heading-thin">PARA CONTEÚDO, VENDAS E ROTINA</span>
+            PROMPTS PRONTOS PARA TAREFAS<br />
+            <span class="heading-thin">QUE FAZEM PARTE DA SUA ROTINA</span>
           </h2>
+          <p class="section-subcopy">
+            Criar conteúdo, pensar em novas abordagens, desenvolver ideias, preparar comunicações e organizar atividades. Explore a biblioteca e encontre estruturas que servem como ponto de partida para diferentes necessidades.
+          </p>
         </div>
 
         <!-- Barra de Escopo Oficial Puxada do Site Principal (150 / 12 / 8) -->
@@ -608,31 +622,31 @@
         <div class="library-mosaic-boards scroll-reveal">
           <div class="mosaic-board interactive-card">
             <div class="mosaic-board__grid">
-              <div class="mosaic-item"><span>🎯</span><div><strong>Máquina de Conteúdo Semanal</strong><small>Planejamento completo para 7 ou 30 dias</small></div></div>
-              <div class="mosaic-item"><span>📊</span><div><strong>Analisador de Perfil & Bio 360°</strong><small>Diagnóstico e otimização de conversão</small></div></div>
+              <div class="mosaic-item"><span>🎯</span><div><strong>Máquina de Conteúdo Semanal</strong><small>Planejamento organizado para 7 ou 30 dias</small></div></div>
+              <div class="mosaic-item"><span>📊</span><div><strong>Analisador de Perfil & Bio 360°</strong><small>Diagnóstico e clareza de apresentação</small></div></div>
               <div class="mosaic-item"><span>💬</span><div><strong>Script de Vendas no WhatsApp</strong><small>Abordagem, qualificação e fechamento</small></div></div>
-              <div class="mosaic-item"><span>🔥</span><div><strong>Fábrica de Ganchos Virais</strong><small>Aberturas magnéticas para Reels e Posts</small></div></div>
-              <div class="mosaic-item"><span>📑</span><div><strong>Criador de Carrosséis de Valor</strong><small>Estrutura slide a slide pronta para usar</small></div></div>
-              <div class="mosaic-item"><span>⚡</span><div><strong>Sequência de Stories que Vendem</strong><small>Roteiro diário de conexão e oferta</small></div></div>
-              <div class="mosaic-item"><span>💼</span><div><strong>Proposta Comercial Irresistível</strong><small>Apresentação de escopo e preço B2B</small></div></div>
-              <div class="mosaic-item"><span>🛡️</span><div><strong>Destruidor de Objeções</strong><small>Respostas prontas para "tá caro" e "vou pensar"</small></div></div>
-              <div class="mosaic-item"><span>📣</span><div><strong>Copy para Anúncios de Tráfego</strong><small>Criativos diretos para Meta e Google Ads</small></div></div>
-              <div class="mosaic-item"><span>🧲</span><div><strong>Arquiteto de Iscas Digitais</strong><small>E-books, checklists e guias em minutos</small></div></div>
+              <div class="mosaic-item"><span>🔥</span><div><strong>Fábrica de Ganchos e Aberturas</strong><small>Ideias de aberturas para Reels e Posts</small></div></div>
+              <div class="mosaic-item"><span>📑</span><div><strong>Criador de Carrosséis de Valor</strong><small>Estrutura slide a slide pronta para adaptar</small></div></div>
+              <div class="mosaic-item"><span>⚡</span><div><strong>Sequência de Stories Comerciais</strong><small>Roteiro de conexão e apresentação de oferta</small></div></div>
+              <div class="mosaic-item"><span>💼</span><div><strong>Proposta Comercial Estruturada</strong><small>Apresentação de escopo e condições B2B</small></div></div>
+              <div class="mosaic-item"><span>🛡️</span><div><strong>Respostas para Objeções</strong><small>Argumentos para dúvidas de preço e decisão</small></div></div>
+              <div class="mosaic-item"><span>📣</span><div><strong>Copy para Anúncios de Tráfego</strong><small>Textos estruturados para campanhas</small></div></div>
+              <div class="mosaic-item"><span>🧲</span><div><strong>Arquiteto de Iscas Digitais</strong><small>Estruturas de e-books, checklists e guias</small></div></div>
             </div>
           </div>
 
           <div class="mosaic-board interactive-card">
             <div class="mosaic-board__grid">
-              <div class="mosaic-item"><span>🤝</span><div><strong>Reativação de Clientes Antigos</strong><small>Campanha prática de retorno no WhatsApp</small></div></div>
-              <div class="mosaic-item"><span>🧠</span><div><strong>Mapeamento de Dores do Público</strong><small>Descubra o que faz seu cliente comprar</small></div></div>
-              <div class="mosaic-item"><span>✍️</span><div><strong>Legendas com Chamada de Ação</strong><small>Textos persuasivos para feed e vídeos</small></div></div>
-              <div class="mosaic-item"><span>🎬</span><div><strong>Roteirista de Vídeos de 60s</strong><small>Estrutura Gancho + Conteúdo + CTA</small></div></div>
-              <div class="mosaic-item"><span>📩</span><div><strong>Sequência de E-mails Comerciais</strong><small>Boas-vindas, nutrição e conversão</small></div></div>
-              <div class="mosaic-item"><span>⏱️</span><div><strong>Organizador de Rotina & Tarefas</strong><small>Priorização semanal sem sobrecarga</small></div></div>
-              <div class="mosaic-item"><span>📋</span><div><strong>Resumo de Reunião e Plano de Ação</strong><small>Transforme anotações soltas em tarefas</small></div></div>
-              <div class="mosaic-item"><span>🏪</span><div><strong>Kit Promoção Relâmpago</strong><small>Campanha completa de giro rápido de caixa</small></div></div>
+              <div class="mosaic-item"><span>🤝</span><div><strong>Reativação de Clientes Antigos</strong><small>Mensagens de retomada de contato</small></div></div>
+              <div class="mosaic-item"><span>🧠</span><div><strong>Mapeamento de Dores do Público</strong><small>Organização de demandas e interesses</small></div></div>
+              <div class="mosaic-item"><span>✍️</span><div><strong>Legendas com Chamada de Ação</strong><small>Textos estruturados para feed e vídeos</small></div></div>
+              <div class="mosaic-item"><span>🎬</span><div><strong>Roteirista de Vídeos Curtos</strong><small>Estrutura Abertura + Conteúdo + CTA</small></div></div>
+              <div class="mosaic-item"><span>📩</span><div><strong>Sequência de E-mails Comerciais</strong><small>Boas-vindas, relacionamento e oferta</small></div></div>
+              <div class="mosaic-item"><span>⏱️</span><div><strong>Organizador de Rotina & Tarefas</strong><small>Priorização semanal de atividades</small></div></div>
+              <div class="mosaic-item"><span>📋</span><div><strong>Resumo de Reunião e Plano de Ação</strong><small>Organização de anotações em próximas etapas</small></div></div>
+              <div class="mosaic-item"><span>🏪</span><div><strong>Kit Campanha Promocional</strong><small>Estrutura de comunicação para ações pontuais</small></div></div>
               <div class="mosaic-item"><span>🎓</span><div><strong>Estruturador de Aulas e Mentorias</strong><small>Módulos, exercícios e materiais de apoio</small></div></div>
-              <div class="mosaic-item"><span>🔄</span><div><strong>Multiplicador de Conteúdo</strong><small>Transforme 1 tema em 15 formatos diferentes</small></div></div>
+              <div class="mosaic-item"><span>🔄</span><div><strong>Desdobramento de Conteúdo</strong><small>Adapte 1 tema para diferentes formatos</small></div></div>
             </div>
           </div>
         </div>
@@ -641,81 +655,81 @@
         <div class="specific-prompts-grid">
           <article class="specific-prompt-card interactive-card scroll-reveal">
             <h3 class="specific-prompt-card__title">
-              Prompt para a IA <span class="text-neon-red">analisar e otimizar seu perfil e oferta</span> por completo.
+              Conteúdo: <span class="text-neon-red">estruturas alinhadas ao seu tema e público</span>
             </h3>
             <span class="specific-prompt-card__line"></span>
             <p class="specific-prompt-card__desc">
-              Descubra exatamente o que está travando sua comunicação comercial e corrija em minutos com sugestões práticas.
+              Prepare conteúdos mais alinhados ao tema, público e objetivo que deseja trabalhar no dia a dia.
             </p>
           </article>
 
           <article class="specific-prompt-card interactive-card scroll-reveal">
             <h3 class="specific-prompt-card__title">
-              Prompt que transforma ideias cruas em <span class="text-neon-red">carrosséis e posts profissionais</span>
+              Vendas: <span class="text-neon-red">abordagens, mensagens e apresentação de ofertas</span>
             </h3>
             <span class="specific-prompt-card__line"></span>
             <p class="specific-prompt-card__desc">
-              Converta qualquer assunto do seu trabalho em um conteúdo estruturado slide a slide que gera autoridade imediata.
+              Estruture abordagens, mensagens e ideias para apresentar seus produtos ou serviços com clareza.
             </p>
           </article>
 
           <article class="specific-prompt-card interactive-card scroll-reveal">
             <h3 class="specific-prompt-card__title">
-              Prompt para os seus <span class="text-neon-red">Stories e Reels terem muito mais retenção</span>
+              Planejamento: <span class="text-neon-red">organização de pautas, campanhas e planos</span>
             </h3>
             <span class="specific-prompt-card__line"></span>
             <p class="specific-prompt-card__desc">
-              Dê um upgrade nos seus roteiros com ganchos fortes para fazer mais pessoas assistirem e responderem até o final.
+              Organize informações e desenvolva planos com pedidos mais claros para orientar a ferramenta de IA.
             </p>
           </article>
 
           <article class="specific-prompt-card interactive-card scroll-reveal">
             <h3 class="specific-prompt-card__title">
-              Prompt do PromptOS para nunca mais se preocupar com <span class="text-neon-red">falta de ideias de conteúdo</span>
+              Comunicação: <span class="text-neon-red">textos adaptados a cada contexto e canal</span>
             </h3>
             <span class="specific-prompt-card__line"></span>
             <p class="specific-prompt-card__desc">
-              Transforme 1 única ideia em 30 abordagens diferentes e mantenha sua presença ativa sem perder horas pensando.
+              Prepare mensagens, propostas e textos adaptados a diferentes situações e destinatários.
             </p>
           </article>
 
           <article class="specific-prompt-card interactive-card scroll-reveal">
             <h3 class="specific-prompt-card__title">
-              Prompt para criar abordagens que <span class="text-neon-red">convertem conversas em vendas no WhatsApp</span>
+              Criatividade: <span class="text-neon-red">desenvolvimento e evolução de novas ideias</span>
             </h3>
             <span class="specific-prompt-card__line"></span>
             <p class="specific-prompt-card__desc">
-              Desbloqueie roteiros de atendimento, qualificação e follow-up que conduzem o cliente ao fechamento sem parecer robô.
+              Explore possibilidades para desenvolver novas ideias e aprimorar as que você já possui.
             </p>
           </article>
 
           <article class="specific-prompt-card interactive-card scroll-reveal">
             <h3 class="specific-prompt-card__title">
-              Estratégia Detalhada de <span class="text-neon-red">Marketing de Conteúdo e Posicionamento</span>
+              Produtividade: <span class="text-neon-red">apoio prático para tarefas recorrentes</span>
             </h3>
             <span class="specific-prompt-card__line"></span>
             <p class="specific-prompt-card__desc">
-              Um plano prático adaptado ao seu nicho para atrair o público certo e transformar seguidores em compradores.
+              Encontre pontos de partida para organizar atividades e facilitar a preparação de tarefas da rotina.
             </p>
           </article>
 
           <article class="specific-prompt-card interactive-card scroll-reveal">
             <h3 class="specific-prompt-card__title">
-              Prompt para gerar <span class="text-neon-red">ganchos magnéticos ilimitados</span> no seu nicho
+              Roteiros e Sequências: <span class="text-neon-red">carrosséis, vídeos curtos e stories</span>
             </h3>
             <span class="specific-prompt-card__line"></span>
             <p class="specific-prompt-card__desc">
-              Crie aberturas irresistíveis para vídeos, anúncios e mensagens que fazem o cliente parar de rolar o feed e prestar atenção.
+              Parta de roteiros com abertura, desenvolvimento e chamada final prontos para personalizar.
             </p>
           </article>
 
           <article class="specific-prompt-card interactive-card scroll-reveal">
             <h3 class="specific-prompt-card__title">
-              Prompt que cria <span class="text-neon-red">sequência de stories e propostas para vender</span>
+              Diferentes tarefas: <span class="text-neon-red">um lugar para encontrar por onde começar</span>
             </h3>
             <span class="specific-prompt-card__line"></span>
             <p class="specific-prompt-card__desc">
-              Monte narrativas e propostas comerciais que guiam naturalmente seu público do primeiro contato até o fechamento.
+              Consulte coleções por objetivo e profissão sempre que surgir uma nova demanda no seu trabalho.
             </p>
           </article>
         </div>
@@ -729,8 +743,13 @@
       <div class="container">
         <div class="section-header-center scroll-reveal">
           <h2 class="display-heading" id="title-mega-prompts">
-            <span class="heading-thin">CADA</span> <strong>PROMPT ESPECIALIZADO</strong> <span class="heading-thin">EM<br />FAZER UMA TAREFA ÚNICA</span>
+            <span class="heading-thin">NÃO PRECISA IMAGINAR.</span><br />
+            <strong>VEJA COMO SÃO OS PROMPTS.</strong>
           </h2>
+          <p class="section-subcopy">
+            Explore exemplos de pedidos estruturados com instruções, contexto e informações que ajudam a orientar a IA.
+            <strong class="text-neon-red block-mt">O objetivo não é copiar qualquer coisa. É ter uma base útil que você possa transformar no seu próprio pedido.</strong>
+          </p>
           <div class="down-arrow-anim" aria-hidden="true">↓</div>
         </div>
 
@@ -744,10 +763,10 @@
             </div>
             <div class="mega-doc-card__sheet">
               <p><span class="doc-tag">#CONTEXTO:</span><br />
-              Você é um estrategista de posicionamento comercial e conversão digital. Estruture uma apresentação profissional e linha de destaques para <span class="doc-var">[SEU NICHO/PROFISSÃO]</span> que converta visitantes em contatos qualificados em segundos.</p>
+              Você é um estrategista de posicionamento comercial e comunicação digital. Estruture uma apresentação profissional e linha de destaques para <span class="doc-var">[SEU NICHO/PROFISSÃO]</span> com clareza para quem visita o perfil.</p>
 
               <p><span class="doc-tag">#FUNÇÃO:</span><br />
-              Arquiteto de Posicionamento Comercial com foco em clareza imediata e autoridade.</p>
+              Arquiteto de Posicionamento Comercial com foco em clareza e apresentação.</p>
 
               <p><span class="doc-tag">#DIRETRIZES DE RESPOSTA:</span><br />
               Estrutura OBRIGATÓRIA:<br />
@@ -765,7 +784,7 @@
               - Objetivo Principal: <span class="doc-var">[VENDAS NO WHATSAPP / AGENDAMENTOS / SEGUIDORES]</span></p>
 
               <p><span class="doc-tag">#FORMATO DE RESPOSTA:</span><br />
-              📄 Entregar 3 opções prontas (Direta, Consultiva e Autoridade) + roteiro dos 3 primeiros Destaques.</p>
+              📄 Entregar 3 opções prontas (Direta, Consultiva e Institucional) + roteiro dos 3 primeiros Destaques.</p>
 
               <div class="mega-doc-card__actions">
                 <button type="button" class="btn-copy-mega js-copy-mega" data-mega-title="Conversor de Bio & Posicionamento">
@@ -783,15 +802,15 @@
             </div>
             <div class="mega-doc-card__sheet">
               <p><span class="doc-tag">#CONTEXTO:</span><br />
-              Atue como especialista em vendas consultivas pelo WhatsApp para <span class="doc-var">[SEU SEGMENTO]</span>. Projete uma sequência de atendimento que conduza o lead desde a primeira dúvida até o pagamento sem parecer mensagem robótica.</p>
+              Atue como especialista em vendas consultivas pelo WhatsApp para <span class="doc-var">[SEU SEGMENTO]</span>. Projete uma sequência de atendimento que conduza o contato desde a primeira dúvida até a apresentação da oferta sem parecer mensagem robótica.</p>
 
               <p><span class="doc-tag">#FUNÇÃO:</span><br />
-              Estrategista de Conversão Comercial e Atendimento Rápido.</p>
+              Estrategista de Comunicação Comercial e Atendimento.</p>
 
               <p><span class="doc-tag">#DIRETRIZES DE RESPOSTA:</span><br />
               1. <strong>**Mensagem 1 (Abertura e Qualificação):**</strong> Acolhimento natural + 2 perguntas estratégicas para entender a necessidade do cliente.<br />
               2. <strong>**Mensagem 2 (Apresentação de Valor):**</strong> Conexão da necessidade do cliente com os benefícios de <span class="doc-var">[SEU PRODUTO/SERVIÇO]</span>.<br />
-              3. <strong>**Mensagem 3 (Quebra de Objeção + Chamada):**</strong> Resposta elegante para <span class="doc-var">[PRINCIPAL OBJEÇÃO]</span> + convite claro para fechar agora.</p>
+              3. <strong>**Mensagem 3 (Quebra de Objeção + Chamada):**</strong> Resposta clara para <span class="doc-var">[PRINCIPAL OBJEÇÃO]</span> + convite para avançar.</p>
 
               <p><span class="doc-tag">#CAMPOS PERSONALIZÁVEIS (PREENCHA NO PROMPTOS):</span><br />
               - O que você vende: <span class="doc-var">[INSERIR OFERTA]</span><br />
@@ -814,16 +833,16 @@
             </div>
             <div class="mega-doc-card__sheet">
               <p><span class="doc-tag">#CONTEXTO:</span><br />
-              Você é um estrategista de conteúdo digital especializado em retenção e conversão. Transforme o tema <span class="doc-var">[TEMA DO POST]</span> em um roteiro completo voltado para atrair compradores reais.</p>
+              Você é um estrategista de conteúdo digital especializado em clareza e retenção. Transforme o tema <span class="doc-var">[TEMA DO POST]</span> em um roteiro estruturado voltado para o seu público.</p>
 
               <p><span class="doc-tag">#DIRETRIZES DE RESPOSTA:</span><br />
-              1. <strong>**3 Opções de Gancho (Hook):**</strong> Frases curtas de impacto para os primeiros 3 segundos ou capa.<br />
-              2. <strong>**Desenvolvimento Prático:**</strong> Passo a passo direto ao ponto, sem clichês genéricos de IA.<br />
-              3. <strong>**Virada de Consciência:**</strong> Por que o jeito comum falha e como <span class="doc-var">[SUA SOLUÇÃO]</span> resolve.<br />
+              1. <strong>**3 Opções de Gancho (Hook):**</strong> Frases curtas de abertura para os primeiros segundos ou capa.<br />
+              2. <strong>**Desenvolvimento Prático:**</strong> Passo a passo direto ao ponto, adaptado ao contexto informado.<br />
+              3. <strong>**Ponto de Atenção:**</strong> O erro comum no tema e como <span class="doc-var">[SUA SOLUÇÃO]</span> ajuda.<br />
               4. <strong>**CTA Estratégico:**</strong> Chamada final direcionando para <span class="doc-var">[COMENTÁRIO / DIRECT / LINK DA BIO]</span>.</p>
 
               <p><span class="doc-tag">#EXEMPLO DE SAÍDA ESTRUTURADA:</span><br />
-              ✅ Slide a slide numerado + sugestão visual + legenda pronta com espaçamento tático.</p>
+              ✅ Slide a slide numerado + sugestão visual + legenda organizada.</p>
 
               <div class="mega-doc-card__actions">
                 <button type="button" class="btn-copy-mega js-copy-mega" data-mega-title="Roteirista de Conteúdo & Carrosséis">
@@ -846,7 +865,7 @@
               <p><span class="doc-tag">#DIRETRIZES DE RESPOSTA:</span><br />
               1. <strong>**Diagnóstico & Objetivo:**</strong> Resumo executivo do cenário atual do cliente.<br />
               2. <strong>**Escopo da Solução:**</strong> Entregáveis organizados em etapas claras.<br />
-              3. <strong>**Cronograma & Próximos Passos:**</strong> Linha do tempo objetiva para início imediato.<br />
+              3. <strong>**Cronograma & Próximos Passos:**</strong> Linha do tempo objetiva para início.<br />
               4. <strong>**Mensagem de Envio:**</strong> Texto curto de acompanhamento para enviar a proposta no WhatsApp ou e-mail.</p>
 
               <div class="mega-doc-card__actions">
@@ -860,23 +879,26 @@
 
         <div class="cta-glow-wrap scroll-reveal">
           <a href="#oferta-final" class="btn-glow-red">
-            <span>QUERO ACESSO AOS PROMPTS</span>
+            <span>QUERO ACESSAR A BIBLIOTECA →</span>
           </a>
         </div>
       </div>
     </section>
 
     <!-- ===================================================================
-         SEÇÃO 08 — PRA QUEM É O PROMPTOS ESSENCIAL? (5 CARDS NUMERADOS)
+         SEÇÃO 08 — POR QUE ESCOLHER O PROMPTOS? (5 CARDS NUMERADOS)
          =================================================================== -->
     <section class="section section--black-glow" id="para-quem" aria-labelledby="title-para-quem">
       <div class="container">
         <div class="audience-showcase-header scroll-reveal">
           <div>
             <h2 class="display-heading" id="title-para-quem">
-              <span class="heading-thin">PRA QUEM É O</span><br />
-              <strong>PROMPTOS ESSENCIAL?</strong>
+              <span class="heading-thin">POR QUE CONTINUAR COMEÇANDO DO ZERO</span><br />
+              <strong>SE VOCÊ PODE TER UM PONTO DE PARTIDA PRONTO?</strong>
             </h2>
+            <p class="section-subcopy">
+              O PromptOS foi pensado para quem quer encontrar recursos úteis sem depender de pesquisas aleatórias, anotações espalhadas e tentativas repetidas.
+            </p>
           </div>
           <!-- Polvinho Girando 360º -->
           <div class="spinning-mascot-badge" aria-hidden="true">
@@ -896,57 +918,57 @@
           <article class="numbered-audience-card interactive-card scroll-reveal">
             <div class="numbered-audience-card__top">
               <span class="numbered-audience-card__num">1</span>
-              <h3 class="numbered-audience-card__title">CRIADORES DE CONTEÚDO</h3>
+              <h3 class="numbered-audience-card__title">MAIS PRATICIDADE PARA COMEÇAR</h3>
             </div>
             <p class="numbered-audience-card__desc">
-              Ao acessar o PromptOS Essencial você terá em mãos um arsenal completo para <span class="text-neon-red">planejar pautas, criar roteiros de Reels, carrosséis e sequências de stories</span>, aumentando sua consistência, engajamento e vendas.
+              Encontre uma <span class="text-neon-red">estrutura relacionada à sua tarefa</span> sem precisar elaborar cada pedido do início.
             </p>
           </article>
 
           <article class="numbered-audience-card interactive-card scroll-reveal">
             <div class="numbered-audience-card__top">
               <span class="numbered-audience-card__num">2</span>
-              <h3 class="numbered-audience-card__title">INFOPRODUTORES E AFILIADOS</h3>
+              <h3 class="numbered-audience-card__title">BIBLIOTECA ORGANIZADA</h3>
             </div>
             <p class="numbered-audience-card__desc">
-              Tenha estruturas prontas para <span class="text-neon-red">criar ofertas, páginas, iscas digitais, e-books, anúncios e scripts de conversão</span> sem ficar horas travado tentando escrever tudo do zero.
+              Explore <span class="text-neon-red">prompts por categoria e necessidade</span>, com tudo reunido em um mesmo ambiente.
             </p>
           </article>
 
           <article class="numbered-audience-card interactive-card scroll-reveal">
             <div class="numbered-audience-card__top">
               <span class="numbered-audience-card__num">3</span>
-              <h3 class="numbered-audience-card__title">PRESTADORES DE SERVIÇO E AUTÔNOMOS</h3>
+              <h3 class="numbered-audience-card__title">PEDIDOS QUE VOCÊ PODE ADAPTAR</h3>
             </div>
             <p class="numbered-audience-card__desc">
-              Construa uma <span class="text-neon-red">presença profissional forte e um atendimento ágil no WhatsApp</span> com comandos estratégicos para abordar, tirar dúvidas e fechar novos clientes todos os dias.
+              Personalize as informações para <span class="text-neon-red">seu público, objetivo e situação</span>.
             </p>
           </article>
 
           <article class="numbered-audience-card interactive-card scroll-reveal">
             <div class="numbered-audience-card__top">
               <span class="numbered-audience-card__num">4</span>
-              <h3 class="numbered-audience-card__title">MENTORES, ESPECIALISTAS & LOJISTAS</h3>
+              <h3 class="numbered-audience-card__title">APLICAÇÕES EM DIFERENTES TAREFAS</h3>
             </div>
             <p class="numbered-audience-card__desc">
-              Posicione sua marca com conteúdos e campanhas que geram <span class="text-neon-red">autoridade imediata, desejo de compra, vendas no Direct/WhatsApp</span> e fidelização de clientes.
+              Utilize a biblioteca como apoio para <span class="text-neon-red">criar, planejar, comunicar e organizar</span> atividades.
             </p>
           </article>
 
           <article class="numbered-audience-card interactive-card scroll-reveal">
             <div class="numbered-audience-card__top">
               <span class="numbered-audience-card__num">5</span>
-              <h3 class="numbered-audience-card__title">CONSULTORES, AGÊNCIAS E EQUIPES</h3>
+              <h3 class="numbered-audience-card__title">FERRAMENTAS ALÉM DOS PROMPTS</h3>
             </div>
             <p class="numbered-audience-card__desc">
-              Com os Kits Prontos por Profissão você consegue <span class="text-neon-red">estruturar propostas comerciais, relatórios, planos de ação e entregas em minutos</span>, multiplicando sua produtividade diária.
+              Aproveite também os <span class="text-neon-red">recursos disponíveis na plataforma</span> para complementar sua utilização de IA.
             </p>
           </article>
         </div>
 
         <div class="cta-glow-wrap scroll-reveal">
           <a href="#oferta-final" class="btn-glow-red">
-            <span>SIM, É PRA MIM!</span>
+            <span>QUERO CONHECER O PROMPTOS →</span>
           </a>
         </div>
       </div>
@@ -961,32 +983,32 @@
           <!-- Bloco SEM O PROMPTOS -->
           <div class="comparison-list-block interactive-card scroll-reveal">
             <h2 class="comparison-list-block__title" id="title-sem-promptos">
-              <span class="text-danger-red">SEM O</span> <strong>PROMPTOS ESSENCIAL...</strong>
+              <span class="text-danger-red">SEM O</span> <strong>PROMPTOS</strong>
             </h2>
             <ul class="vs-checklist vs-checklist--bad">
               <li>
                 <span class="vs-icon vs-icon--bad" aria-hidden="true">✕</span>
-                <span>2 a 3 horas perdidas tentando descobrir "o que e como pedir para a IA hoje?"</span>
+                <span>Começar um pedido sem saber como estruturar.</span>
               </li>
               <li>
                 <span class="vs-icon vs-icon--bad" aria-hidden="true">✕</span>
-                <span>Respostas genéricas e robóticas que ninguém salva, responde ou compra</span>
+                <span>Procurar exemplos em vários lugares.</span>
               </li>
               <li>
                 <span class="vs-icon vs-icon--bad" aria-hidden="true">✕</span>
-                <span>Abordagens no WhatsApp e Stories que o cliente visualiza e ignora</span>
+                <span>Reescrever solicitações repetidamente.</span>
               </li>
               <li>
                 <span class="vs-icon vs-icon--bad" aria-hidden="true">✕</span>
-                <span>Perfil e apresentação comercial que não convertem visitantes em clientes</span>
+                <span>Perder bons comandos entre conversas.</span>
               </li>
               <li>
                 <span class="vs-icon vs-icon--bad" aria-hidden="true">✕</span>
-                <span>Dias sem publicar ou demorar horas para montar uma simples proposta</span>
+                <span>Depender de tentativas para encontrar um ponto de partida.</span>
               </li>
               <li>
                 <span class="vs-icon vs-icon--bad" aria-hidden="true">✕</span>
-                <span>Prompts bons espalhados e perdidos em dezenas de conversas antigas</span>
+                <span>Ter que organizar sozinho os recursos que utiliza.</span>
               </li>
             </ul>
           </div>
@@ -994,32 +1016,32 @@
           <!-- Bloco COM O PROMPTOS -->
           <div class="comparison-list-block interactive-card scroll-reveal">
             <h2 class="comparison-list-block__title">
-              <span class="text-success-green">COM O</span> <strong>PROMPTOS ESSENCIAL...</strong>
+              <span class="text-success-green">COM O</span> <strong>PROMPTOS</strong>
             </h2>
             <ul class="vs-checklist vs-checklist--good">
               <li>
                 <span class="vs-icon vs-icon--good" aria-hidden="true">✓</span>
-                <span>30 dias de conteúdo, vendas e rotina planejados em poucas horas</span>
+                <span>Encontrar prompts preparados para diferentes tarefas.</span>
               </li>
               <li>
                 <span class="vs-icon vs-icon--good" aria-hidden="true">✓</span>
-                <span>Carrosséis, roteiros e textos profissionais personalizados pro seu nicho</span>
+                <span>Consultar uma biblioteca organizada.</span>
               </li>
               <li>
                 <span class="vs-icon vs-icon--good" aria-hidden="true">✓</span>
-                <span>Scripts de WhatsApp e sequências de Stories focados em conversão real</span>
+                <span>Adaptar estruturas existentes ao seu objetivo.</span>
               </li>
               <li>
                 <span class="vs-icon vs-icon--good" aria-hidden="true">✓</span>
-                <span>Posicionamento, Bio e Ofertas estruturadas para atrair compradores</span>
+                <span>Ter recursos reunidos em um mesmo ambiente.</span>
               </li>
               <li>
                 <span class="vs-icon vs-icon--good" aria-hidden="true">✓</span>
-                <span>Biblioteca organizada + Kits Prontos por Profissão para nunca mais travar</span>
+                <span>Começar com pedidos mais completos.</span>
               </li>
               <li>
                 <span class="vs-icon vs-icon--good" aria-hidden="true">✓</span>
-                <span>Funciona no ChatGPT, Gemini e Claude — pagamento único sem mensalidade</span>
+                <span>Utilizar ferramentas de apoio conforme sua necessidade.</span>
               </li>
             </ul>
           </div>
@@ -1028,19 +1050,19 @@
     </section>
 
     <!-- ===================================================================
-         SEÇÃO 10 — OFERTA ESPECIAL POR TEMPO LIMITADO (BOX TRACEJADO + PREÇO)
+         SEÇÃO 10 — OFERTA PRINCIPAL (CARD + PREÇO PRESERVADOS)
          =================================================================== -->
     <section class="section section--black-glow section--offer-showcase" id="oferta-final" aria-labelledby="title-oferta">
       <div class="container">
         <div class="section-pill-banner section-pill-banner--offer scroll-reveal">
           <span class="offer-fire-badge" aria-hidden="true">%</span>
-          <span id="title-oferta">OFERTA ESPECIAL POR <strong>TEMPO LIMITADO</strong></span>
+          <span id="title-oferta">SEU ACESSO AO <strong>PROMPTOS</strong></span>
         </div>
 
-        <!-- Card Principal com Borda Tracejada + Mockup + Polvinho + Checklist Oficial + Preço Único -->
+        <!-- Card Principal com Borda + Mockup + Polvinho + Checklist Oficial + Preço Único -->
         <div class="dashed-offer-card interactive-card scroll-reveal" id="offer-pricing-card">
           <div class="dashed-offer-card__top-row">
-            <span class="dashed-offer-card__pill">ACESSE IMEDIATAMENTE</span>
+            <span class="dashed-offer-card__pill">SEU ACESSO AO PROMPTOS</span>
 
             <!-- Cronômetro Regressivo Integrado -->
             <div class="dashed-offer-card__timer">
@@ -1081,7 +1103,7 @@
             <div class="offer-mini-showcase__tablet">
               <div class="offer-mini-showcase__bar">
                 <span></span><span></span><span></span>
-                <small>Central PromptOS Essencial • Acesso Completo</small>
+                <small>Sua próxima tarefa não precisa começar do zero</small>
               </div>
               <div class="offer-mini-showcase__pills">
                 <span>🎬 Criação de Conteúdo</span>
@@ -1098,24 +1120,24 @@
           <div class="offer-summary-box">
             <div class="offer-summary-box__head">
               <img src="./assets/logo-160.png" alt="" width="28" height="28" class="offer-summary-box__avatar" decoding="async" />
-              <span>Tudo o que está incluído no seu acesso ao <strong>PromptOS Essencial</strong>:</span>
+              <span><strong>Tudo isso em um único acesso:</strong> encontre prompts, prepare pedidos e explore ferramentas sempre que surgir uma nova necessidade.</span>
             </div>
             <ul class="offer-summary-box__list">
               <li>
                 <span class="offer-summary-check" aria-hidden="true">✓</span>
-                <span><strong>150 prompts organizados</strong> por objetivo e profissão (Conteúdo, Vendas, Atendimento e Gestão)</span>
+                <span><strong>Biblioteca de prompts organizados</strong> (150 comandos por categoria e necessidade)</span>
               </li>
               <li>
                 <span class="offer-summary-check" aria-hidden="true">✓</span>
-                <span><strong>Personalizador de campos guiado</strong>, exemplos práticos, favoritos e cópia em 1 clique</span>
+                <span><strong>Recursos para diferentes tarefas e objetivos</strong> com possibilidades de personalização</span>
               </li>
               <li>
                 <span class="offer-summary-check" aria-hidden="true">✓</span>
-                <span><strong>12 coleções e kits de trabalho</strong> + <strong>8 mini ferramentas guiadas</strong> incluídas na versão Essencial</span>
+                <span><strong>Ferramentas incluídas no PromptOS</strong> (12 coleções por profissão + 8 mini ferramentas guiadas)</span>
               </li>
               <li>
                 <span class="offer-summary-check" aria-hidden="true">✓</span>
-                <span><strong>Compra única e acesso vitalício</strong> aos conteúdos adquiridos + 7 dias de garantia legal</span>
+                <span><strong>Pagamento único e acesso vitalício</strong> aos conteúdos adquiridos + 7 dias de garantia legal</span>
               </li>
             </ul>
           </div>
@@ -1141,10 +1163,10 @@
               data-cta-location="offer_main"
               role="button"
             >
-              <span>ABRIR O PROMPTOS ESSENCIAL</span>
+              <span>SIM, QUERO ACESSAR O PROMPTOS →</span>
             </a>
             <p class="dashed-offer-card__footnote">
-              PAGAMENTO ÚNICO • SEM MENSALIDADE OBRIGATÓRIA • ACESSO IMEDIATO
+              Confira as condições de pagamento, acesso e garantia informadas nesta oferta.
             </p>
           </div>
         </div>
@@ -1152,16 +1174,16 @@
     </section>
 
     <!-- ===================================================================
-         SEÇÃO 11 — GARANTIA INCONDICIONAL DE 7 DIAS (FIEL À REFERÊNCIA)
+         SEÇÃO 11 — GARANTIA DE 7 DIAS (FIEL À REFERÊNCIA)
          =================================================================== -->
     <section class="section section--gray" id="garantia" aria-labelledby="title-garantia">
       <div class="container">
         <div class="guarantee-box interactive-card scroll-reveal">
-          <div class="guarantee-box__pill">GARANTIA INCONDICIONAL</div>
+          <div class="guarantee-box__pill">SUA COMPRA COM MAIS TRANQUILIDADE</div>
 
           <h2 class="guarantee-box__title" id="title-garantia">
-            Sua satisfação ou seu<br />
-            <strong>dinheiro de volta.</strong>
+            Conheça o PromptOS com a<br />
+            <strong>segurança da garantia de 7 dias.</strong>
           </h2>
 
           <!-- Selo Visual 7 Dias de Garantia -->
@@ -1178,21 +1200,21 @@
 
           <div class="guarantee-box__copy">
             <p>
-              Como <strong>temos absoluta certeza</strong> de que o <strong>PromptOS Essencial</strong> vai transformar a velocidade com que você cria conteúdo, vende e resolve tarefas usando IA, você conta com uma <strong>garantia incondicional de 7 dias</strong>. Entre na plataforma, explore cada prompt e veja na prática:
+              Explore a plataforma, conheça os <strong>recursos disponíveis no PromptOS</strong> e avalie como eles se encaixam nas suas necessidades:
             </p>
 
             <ul class="guarantee-box__bullets">
-              <li><strong>▶ Gerar conteúdos, roteiros e propostas 10x mais rápido</strong></li>
-              <li><strong>▶ Elevar a qualidade das suas abordagens e vendas</strong></li>
-              <li><strong>▶ Economizar horas de trabalho toda semana sem travar</strong></li>
+              <li><strong>▶ Consultar a biblioteca de prompts organizados por categoria</strong></li>
+              <li><strong>▶ Adaptar estruturas e pedidos ao contexto das suas tarefas</strong></li>
+              <li><strong>▶ Utilizar as coleções e ferramentas de apoio incluídas</strong></li>
             </ul>
 
             <p>
-              Se, por qualquer motivo, você sentir que o <strong>PromptOS Essencial</strong> não entrega muito mais valor do que você investiu, basta enviar uma mensagem para o nosso suporte dentro de 7 dias solicitando o reembolso integral.
+              As condições de cancelamento e reembolso seguem a <strong>política de garantia de 7 dias</strong> apresentada no momento da compra.
             </p>
 
             <p class="guarantee-box__closing">
-              <strong>Simples, transparente e direto.</strong> Sem perguntas. Sem burocracia.
+              <strong>Você sabe o que está adquirindo</strong> e quais são as condições da sua compra.
             </p>
           </div>
         </div>
@@ -1227,94 +1249,94 @@
               <span>TIRE SUAS <strong>DÚVIDAS FREQUENTES</strong></span>
             </div>
             <h2 class="display-heading" id="faq-title">
-              PERGUNTAS <span class="text-neon-red">FREQUENTES</span>
+              FICOU ALGUMA DÚVIDA? <span class="text-neon-red">A GENTE EXPLICA.</span>
             </h2>
             <p class="section-subcopy">
-              Respostas diretas e transparentes sobre o funcionamento e o acesso ao PromptOS Essencial.
+              Entenda o que está incluído no PromptOS, como funciona o acesso e o que esperar da plataforma.
             </p>
           </div>
 
           <div class="faq-list">
             <details class="faq-item interactive-card scroll-reveal">
               <summary class="faq-item__question">
-                <span>Preciso saber criar prompts ou dominar engenharia de IA?</span>
+                <span>O que exatamente é o PromptOS?</span>
                 <span class="faq-item__icon" aria-hidden="true"></span>
               </summary>
               <div class="faq-item__answer">
                 <p>
-                  Não. A proposta do PromptOS Essencial é justamente eliminar o improviso. Você escolhe a tarefa que precisa resolver, preenche os campos indicados com os dados do seu negócio e copia o comando estruturado pronto para colar na IA.
+                  O PromptOS é uma plataforma que reúne uma biblioteca de prompts e ferramentas para ajudar você a preparar pedidos e trabalhar com inteligência artificial em diferentes tarefas.
                 </p>
               </div>
             </details>
 
             <details class="faq-item interactive-card scroll-reveal">
               <summary class="faq-item__question">
-                <span>O PromptOS cria os conteúdos automaticamente?</span>
+                <span>Por que comprar prompts se posso criá-los no ChatGPT?</span>
                 <span class="faq-item__icon" aria-hidden="true"></span>
               </summary>
               <div class="faq-item__answer">
                 <p>
-                  O PromptOS organiza, recomenda e personaliza os comandos com estrutura profissional. Você copia as instruções prontas em 1 clique e utiliza na ferramenta de IA compatível que preferir (como ChatGPT, Gemini ou Claude).
+                  Você pode criar seus próprios prompts. A proposta do PromptOS é oferecer uma biblioteca organizada e recursos que ajudam você a encontrar um ponto de partida, sem precisar preparar e reunir todos os comandos sozinho.
                 </p>
               </div>
             </details>
 
             <details class="faq-item interactive-card scroll-reveal">
               <summary class="faq-item__question">
-                <span>Preciso pagar ChatGPT Plus, Gemini ou Claude Pro para usar?</span>
+                <span>Preciso ter experiência com inteligência artificial?</span>
                 <span class="faq-item__icon" aria-hidden="true"></span>
               </summary>
               <div class="faq-item__answer">
                 <p>
-                  Não é obrigatório. Os prompts estruturados do PromptOS Essencial funcionam perfeitamente tanto nas versões gratuitas quanto nas versões pagas do ChatGPT, Google Gemini e Claude. Assinaturas de plataformas externas de IA não estão incluídas.
+                  Não precisa ser especialista em criação de prompts. Os recursos foram pensados para oferecer estruturas que você pode consultar e adaptar às suas necessidades.
                 </p>
               </div>
             </details>
 
             <details class="faq-item interactive-card scroll-reveal">
               <summary class="faq-item__question">
-                <span>Vou pagar mensalidade pelo PromptOS Essencial?</span>
+                <span>O PromptOS substitui o ChatGPT?</span>
                 <span class="faq-item__icon" aria-hidden="true"></span>
               </summary>
               <div class="faq-item__answer">
                 <p>
-                  Não pelo PromptOS Essencial. A oferta desta página é de pagamento único (à vista ou parcelado), sem cobrança recorrente ou mensalidade obrigatória.
+                  Não. O PromptOS reúne recursos para auxiliar a preparação e a organização dos seus pedidos. A utilização dos prompts acontece nas ferramentas de IA compatíveis, como ChatGPT, Gemini ou Claude.
                 </p>
               </div>
             </details>
 
             <details class="faq-item interactive-card scroll-reveal">
               <summary class="faq-item__question">
-                <span>O que significa acesso vitalício aos conteúdos adquiridos?</span>
+                <span>Como recebo o acesso depois da compra?</span>
                 <span class="faq-item__icon" aria-hidden="true"></span>
               </summary>
               <div class="faq-item__answer">
                 <p>
-                  Significa acesso aos conteúdos adquiridos do pacote PromptOS Essencial (150 prompts, 12 coleções/kits por profissão e 8 mini ferramentas guiadas) enquanto a plataforma operar, sem mensalidade obrigatória.
+                  Após a confirmação do pagamento pelo processador financeiro, as instruções e credenciais para acessar a área de membros do PromptOS Essencial são enviadas para o e-mail informado na compra.
                 </p>
               </div>
             </details>
 
             <details class="faq-item interactive-card scroll-reveal">
               <summary class="faq-item__question">
-                <span>Como recebo meu acesso após a compra?</span>
+                <span>O pagamento é único ou mensal?</span>
                 <span class="faq-item__icon" aria-hidden="true"></span>
               </summary>
               <div class="faq-item__answer">
                 <p>
-                  Assim que o pagamento é confirmado, você recebe automaticamente no e-mail cadastrado as instruções e credenciais para acessar a área de membros do PromptOS Essencial no celular, tablet ou computador.
+                  A condição comercial configurada nesta oferta do PromptOS Essencial é de pagamento único (à vista ou parcelado), sem cobrança de mensalidade obrigatória.
                 </p>
               </div>
             </details>
 
             <details class="faq-item interactive-card scroll-reveal">
               <summary class="faq-item__question">
-                <span>E se eu me arrepender da compra?</span>
+                <span>E se eu comprar e não gostar?</span>
                 <span class="faq-item__icon" aria-hidden="true"></span>
               </summary>
               <div class="faq-item__answer">
                 <p>
-                  Você conta com a garantia incondicional de 7 dias corridos a partir da compra (Art. 49 do Código de Defesa do Consumidor). Basta solicitar o cancelamento e reembolso integral pelo nosso canal oficial de suporte informado no rodapé.
+                  A compra conta com garantia legal de 7 dias corridos a partir da confirmação do pagamento (Art. 49 do Código de Defesa do Consumidor). Dentro desse prazo, basta solicitar o cancelamento e reembolso integral pelo canal oficial de suporte informado no rodapé.
                 </p>
               </div>
             </details>
@@ -1557,6 +1579,6 @@
   <!-- Toast de Feedback (Cópia de Mega-Prompt / Interações) -->
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-  <script src="./app.js?v=20261019v2" defer></script>
+  <script src="./app.js?v=20261021e" defer></script>
 </body>
 </html>

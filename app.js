@@ -84,7 +84,7 @@
         const sheet = card && card.querySelector('.mega-doc-card__sheet');
         const title = btn.getAttribute('data-mega-title') || 'Mega-Prompt';
         const rawText = sheet
-          ? sheet.innerText.replace('📋 Testar Cópia deste Mega-Prompt', '').trim()
+          ? sheet.textContent.replace('📋 Testar Cópia deste Mega-Prompt', '').replace(/\s+\n/g, '\n').trim()
           : title;
 
         try {
@@ -520,10 +520,45 @@
     });
   }
 
+  /* ==========================================================================
+     5. BARRA DE LED DE PROGRESSO DE ROLAGEM NO HEADER (PC E MOBILE)
+     Carrega suavemente na base do header conforme o usuário rola a página.
+     ========================================================================== */
+  function initHeaderScrollLed() {
+    const ledBar = document.getElementById('header-scroll-led-bar');
+    if (!ledBar) return;
+
+    let ticking = false;
+
+    function updateScrollLed() {
+      ticking = false;
+      const docEl = document.documentElement;
+      const scrollTop = window.scrollY || docEl.scrollTop || 0;
+      const scrollableHeight = Math.max(docEl.scrollHeight - window.innerHeight, 1);
+      const ratio = Math.min(Math.max(scrollTop / scrollableHeight, 0), 1);
+      const pct = (ratio * 100).toFixed(2);
+
+      ledBar.style.width = `${pct}%`;
+      ledBar.style.opacity = scrollTop > 2 ? '1' : '0';
+    }
+
+    function onScrollOrResize() {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateScrollLed);
+      }
+    }
+
+    window.addEventListener('scroll', onScrollOrResize, { passive: true });
+    window.addEventListener('resize', onScrollOrResize, { passive: true });
+    updateScrollLed();
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initModalsAndCTAs();
     initInteractiveCards();
     initPromoOfferExperience();
     initScrollReveal();
+    initHeaderScrollLed();
   });
 })();

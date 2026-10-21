@@ -1,0 +1,11 @@
+{
+  "name": "promptos-essencial-apresentacao",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing Page de Apresentação Oficial do PromptOS Essencial (LP 2)",
+  "scripts": {
+    "dev": "python -m http.server 4174 --bind 127.0.0.1",
+    "dav": "python -m http.server 4174 --bind 127.0.0.1",
+    "start": "python -m http.server 4174 --bind 127.0.0.1"
+  }
+}

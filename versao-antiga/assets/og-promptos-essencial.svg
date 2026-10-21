@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="0%" r="75%">
+      <stop offset="0%" stop-color="#9F2033" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#0D0E11" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0D0E11"/>
+  <rect width="1200" height="630" fill="url(#bgGlow)"/>
+  <rect x="48" y="48" width="1104" height="534" rx="24" fill="#191B20" stroke="#353841" stroke-width="2"/>
+  <rect x="96" y="100" width="320" height="40" rx="20" fill="#24262C" stroke="#353841"/>
+  <circle cx="120" cy="120" r="6" fill="#C92F40"/>
+  <text x="138" y="126" fill="#F5F5F6" font-family="Inter, sans-serif" font-size="15" font-weight="700" letter-spacing="1.2">PROMPTOS • ESSENCIAL</text>
+  <text x="96" y="220" fill="#F5F5F6" font-family="Manrope, Inter, sans-serif" font-size="52" font-weight="800">Pare de perder tempo tentando</text>
+  <text x="96" y="284" fill="#F5F5F6" font-family="Manrope, Inter, sans-serif" font-size="52" font-weight="800">descobrir o que pedir à IA.</text>
+  <text x="96" y="355" fill="#BABDC6" font-family="Inter, sans-serif" font-size="24" font-weight="400">Encontre, personalize em poucos campos e copie prompts</text>
+  <text x="96" y="390" fill="#BABDC6" font-family="Inter, sans-serif" font-size="24" font-weight="400">organizados por tarefa e profissão.</text>
+  <rect x="96" y="450" width="420" height="68" rx="14" fill="#C92F40"/>
+  <text x="306" y="492" text-anchor="middle" fill="#FFFFFF" font-family="Manrope, Inter, sans-serif" font-size="22" font-weight="800">ACESSO ÚNICO • R$ 47,90</text>
+</svg>

@@ -53,12 +53,13 @@ html {
   font-family: var(--font-sans);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 body {
   background-color: var(--bg-main);
   color: var(--text-primary);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img,
@@ -107,7 +108,37 @@ ul {
   z-index: 60;
   background: rgba(8, 9, 12, 0.86);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Barra de LED vermelha de carregamento/progresso na base do Header (PC e Mobile) */
+.header-scroll-led {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2.2px;
+  pointer-events: none;
+  z-index: 5;
+  overflow: visible;
+}
+
+.header-scroll-led__bar {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: 0 999px 999px 0;
+  background: linear-gradient(90deg, var(--red-action) 0%, var(--red-hover) 82%, var(--red-neon) 100%);
+  box-shadow:
+    0 0 6px rgba(201, 47, 64, 0.85),
+    0 0 12px rgba(224, 58, 77, 0.35);
+  filter: drop-shadow(0 0 4px rgba(201, 47, 64, 0.85));
+  opacity: 0;
+  transition:
+    width 0.08s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s ease;
+  will-change: width;
 }
 
 .site-header__inner {
@@ -249,9 +280,10 @@ ul {
    BOTÃO CTA COM GLOW VERMELHO NEON (PADRÃO DA REFERÊNCIA EM VERMELHO)
    ========================================================================== */
 .cta-glow-wrap {
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1.65rem;
 }
 
 .btn-glow-red {
@@ -259,24 +291,24 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 54px;
-  padding: 0.9rem 1.85rem;
+  min-height: 58px;
+  padding: 0.95rem 1.6rem;
   width: 100%;
   max-width: 420px;
-  border-radius: 10px;
+  border-radius: 12px;
   background: linear-gradient(90deg, #8F1D2C 0%, #C92F40 50%, #E03A4D 100%);
-  border: 1.5px solid rgba(255, 130, 145, 0.55);
+  border: 1.5px solid rgba(255, 130, 145, 0.58);
   color: #FFFFFF;
   font-family: var(--font-display);
-  font-size: clamp(0.9rem, 3.5vw, 1.04rem);
+  font-size: clamp(0.96rem, 3.9vw, 1.06rem);
   font-weight: 800;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
   box-shadow:
-    0 0 34px rgba(224, 58, 77, 0.52),
-    0 10px 24px -6px rgba(0, 0, 0, 0.75),
+    0 0 34px rgba(224, 58, 77, 0.55),
+    0 10px 24px -6px rgba(0, 0, 0, 0.78),
     inset 0 1px 0 rgba(255, 255, 255, 0.28);
   transition: transform 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
 }
@@ -299,8 +331,12 @@ ul {
    ========================================================================== */
 .hero-showcase {
   position: relative;
-  padding-top: clamp(1.6rem, 4svh, 3rem);
-  padding-bottom: clamp(3.2rem, 7svh, 4.8rem);
+  min-height: calc(100svh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: clamp(1.25rem, 3.2svh, 2.75rem);
+  padding-bottom: clamp(2.35rem, 5.2svh, 4.2rem);
   background: var(--bg-main);
   overflow: hidden;
   text-align: center;
@@ -311,18 +347,18 @@ ul {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to bottom, rgba(8, 9, 12, 0.3) 0%, rgba(8, 9, 12, 0.96) 88%, var(--bg-main) 100%),
+    linear-gradient(to bottom, rgba(8, 9, 12, 0.25) 0%, rgba(8, 9, 12, 0.94) 88%, var(--bg-main) 100%),
     repeating-linear-gradient(
       90deg,
-      rgba(201, 47, 64, 0.05) 0px,
-      rgba(201, 47, 64, 0.05) 1px,
+      rgba(201, 47, 64, 0.055) 0px,
+      rgba(201, 47, 64, 0.055) 1px,
       transparent 1px,
       transparent 38px
     ),
     repeating-linear-gradient(
       0deg,
-      rgba(201, 47, 64, 0.04) 0px,
-      rgba(201, 47, 64, 0.04) 1px,
+      rgba(201, 47, 64, 0.045) 0px,
+      rgba(201, 47, 64, 0.045) 1px,
       transparent 1px,
       transparent 38px
     );
@@ -332,16 +368,16 @@ ul {
 
 .hero-showcase__ambient-glow {
   position: absolute;
-  top: 2%;
+  top: 1%;
   left: 50%;
   transform: translateX(-50%);
-  width: min(520px, 95vw);
-  height: 360px;
+  width: min(540px, 96vw);
+  height: 380px;
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(201, 47, 64, 0.34) 0%,
-    rgba(159, 32, 51, 0.16) 48%,
+    rgba(201, 47, 64, 0.38) 0%,
+    rgba(159, 32, 51, 0.18) 48%,
     rgba(8, 9, 12, 0) 76%
   );
   filter: blur(22px);
@@ -352,39 +388,43 @@ ul {
 .hero-showcase__container {
   position: relative;
   z-index: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Palco com os 3 Ícones à Esquerda + Polvinho Central (Igual à Referência) */
+/* Palco Conectado: 3 Ícones acoplados + Polvinho Central alinhado ao eixo */
 .hero-visual-stage {
   position: relative;
   width: 100%;
-  max-width: 410px;
-  display: grid;
-  grid-template-columns: 68px 1fr;
+  max-width: 360px;
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.15rem;
+  justify-content: center;
+  padding-right: 18px;
+  margin-inline: auto;
+  margin-bottom: 0;
 }
 
 .hero-floating-icons {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: -10px;
   z-index: 2;
+  flex-shrink: 0;
 }
 
 .hero-floating-icon {
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   border-radius: 14px;
-  background: linear-gradient(145deg, rgba(30, 34, 44, 0.92) 0%, rgba(16, 18, 24, 0.95) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(145deg, rgba(30, 34, 44, 0.94) 0%, rgba(14, 16, 22, 0.96) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow:
-    0 12px 24px -6px rgba(0, 0, 0, 0.75),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    0 12px 24px -6px rgba(0, 0, 0, 0.78),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
   color: #FFFFFF;
   display: flex;
   align-items: center;
@@ -392,22 +432,22 @@ ul {
 }
 
 .hero-floating-icon--accent {
-  border-color: rgba(224, 58, 77, 0.55);
+  border-color: rgba(224, 58, 77, 0.62);
   box-shadow:
-    0 0 20px rgba(201, 47, 64, 0.35),
-    0 12px 24px -6px rgba(0, 0, 0, 0.75);
+    0 0 22px rgba(201, 47, 64, 0.42),
+    0 12px 24px -6px rgba(0, 0, 0, 0.78);
   color: var(--red-neon);
 }
 
 .hero-floating-icon svg {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
 }
 
 .hero-floating-connector {
   width: 2px;
-  height: 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(224, 58, 77, 0.55));
+  height: 13px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(224, 58, 77, 0.62));
 }
 
 .hero-mascot-centerpiece {
@@ -421,12 +461,12 @@ ul {
 
 .hero-mascot-centerpiece__halo {
   position: absolute;
-  inset: 4%;
+  inset: 3%;
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(224, 58, 77, 0.58) 0%,
-    rgba(159, 32, 51, 0.28) 52%,
+    rgba(224, 58, 77, 0.62) 0%,
+    rgba(159, 32, 51, 0.3) 52%,
     rgba(8, 9, 12, 0) 78%
   );
   filter: blur(16px);
@@ -436,33 +476,33 @@ ul {
 
 .hero-mascot-centerpiece__ring {
   position: absolute;
-  width: 82%;
+  width: 86%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  border: 1px dashed rgba(224, 58, 77, 0.35);
+  border: 1px dashed rgba(224, 58, 77, 0.38);
   z-index: -1;
   animation: mascotSpin360 18s linear infinite;
 }
 
 .hero-mascot-centerpiece__img {
-  width: clamp(195px, 54vw, 265px);
+  width: clamp(210px, 58vw, 268px);
   height: auto;
   object-fit: contain;
   filter:
-    drop-shadow(0 12px 26px rgba(201, 47, 64, 0.62))
-    drop-shadow(0 0 14px rgba(224, 58, 77, 0.4));
+    drop-shadow(0 12px 26px rgba(201, 47, 64, 0.65))
+    drop-shadow(0 0 14px rgba(224, 58, 77, 0.42));
   animation: mascotJump 2.4s ease-in-out infinite;
 }
 
 .hero-mascot-centerpiece__floor {
-  width: 62%;
+  width: 66%;
   height: 12px;
-  margin-top: 4px;
+  margin-top: 2px;
   border-radius: 50%;
   background: radial-gradient(
     ellipse at center,
-    rgba(224, 58, 77, 0.55) 0%,
-    rgba(159, 32, 51, 0.2) 55%,
+    rgba(224, 58, 77, 0.58) 0%,
+    rgba(159, 32, 51, 0.22) 55%,
     rgba(8, 9, 12, 0) 80%
   );
   filter: blur(4px);
@@ -498,34 +538,59 @@ ul {
 }
 
 .hero-showcase__brand {
-  margin-bottom: 1.1rem;
+  position: relative;
+  z-index: 3;
+  margin-top: -0.45rem;
+  margin-bottom: 1.05rem;
 }
 
 .hero-showcase__logo {
-  height: 46px;
+  height: 50px;
   width: auto;
   margin-inline: auto;
-  filter: drop-shadow(0 0 14px rgba(201, 47, 64, 0.45));
+  filter: drop-shadow(0 4px 16px rgba(201, 47, 64, 0.52));
 }
 
 .hero-showcase__title {
   font-family: var(--font-display);
-  font-size: clamp(1.38rem, 5.5vw, 2.15rem);
+  font-size: clamp(1.62rem, 6.7vw, 2.38rem);
   font-weight: 900;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
   text-transform: uppercase;
   color: #FFFFFF;
-  max-width: 580px;
-  margin-bottom: 1rem;
-  text-wrap: balance;
+  width: 100%;
+  max-width: 620px;
+  margin-bottom: 0.95rem;
 }
 
 .hero-showcase__subtitle {
-  font-size: clamp(0.94rem, 3.5vw, 1.08rem);
-  color: var(--text-secondary);
-  line-height: 1.55;
-  max-width: 520px;
+  font-size: clamp(1.04rem, 4.15vw, 1.16rem);
+  color: #D2DAE6;
+  line-height: 1.56;
+  max-width: 35ch;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .hero-visual-stage {
+    max-width: 420px;
+    padding-right: 24px;
+  }
+
+  .hero-floating-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .hero-floating-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hero-showcase__subtitle {
+    max-width: 540px;
+  }
 }
 
 /* ==========================================================================
@@ -862,20 +927,49 @@ ul {
 }
 
 /* ==========================================================================
-   SEÇÃO 04 — COMO FUNCIONA? (TECLAS CTRL + C / CTRL + V + POLVINHO)
+   SEÇÃO 04 — COMO FUNCIONA? (TECLAS CTRL + C / CTRL + V + POLVINHO ANIMADO)
    ========================================================================== */
+@keyframes ctrlRowPulseC {
+  0%, 45%, 100% {
+    transform: translateY(0);
+  }
+  12%, 28% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes ctrlRowPulseV {
+  0%, 50%, 95%, 100% {
+    transform: translateY(0);
+  }
+  62%, 78% {
+    transform: translateY(4px);
+  }
+}
+
 .ctrl-how-block {
-  margin-top: 3.4rem;
+  margin-top: 3.2rem;
+  min-height: 64svh;
+  padding: 2.6rem 1.25rem;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(201, 47, 64, 0.22) 0%, rgba(14, 16, 22, 0.96) 74%),
+    var(--surface-1);
+  border: 1px solid rgba(224, 58, 77, 0.36);
+  box-shadow:
+    0 20px 44px -12px rgba(0, 0, 0, 0.82),
+    0 0 28px -8px rgba(201, 47, 64, 0.22);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 1.65rem;
 }
 
 .ctrl-how-block__title {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 4.8vw, 1.65rem);
+  font-size: clamp(1.35rem, 5vw, 1.75rem);
   font-weight: 900;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -887,13 +981,13 @@ ul {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1.35rem;
 }
 
 .ctrl-keys-rows {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.05rem;
 }
 
 .ctrl-key-row {
@@ -901,6 +995,14 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 0.85rem;
+}
+
+.ctrl-key-row:first-child .keycap {
+  animation: ctrlRowPulseC 3.2s ease-in-out infinite;
+}
+
+.ctrl-key-row:last-child .keycap {
+  animation: ctrlRowPulseV 3.2s ease-in-out infinite;
 }
 
 /* Teclas Estilizadas 3D estilo Teclado Mecânico Neon */
@@ -1542,8 +1644,12 @@ ul {
 }
 
 /* ==========================================================================
-   SEÇÃO 10 — OFERTA ESPECIAL (BOX COM BORDA TRACEJADA + PREÇO OFICIAL)
+   SEÇÃO 10 — OFERTA ESPECIAL (FORMATO EXTERNO DO PROJETO 1 + CONTEÚDO INTERNO)
    ========================================================================== */
+.section-pill-banner--offer {
+  display: none;
+}
+
 .offer-fire-badge {
   width: 26px;
   height: 26px;
@@ -1559,11 +1665,17 @@ ul {
 }
 
 .dashed-offer-card {
-  background: linear-gradient(180deg, rgba(22, 25, 33, 0.96) 0%, rgba(12, 14, 19, 0.98) 100%);
-  border: 2px dashed rgba(255, 255, 255, 0.38);
-  border-radius: var(--radius-xl);
-  padding: 1.5rem 1.15rem;
-  box-shadow: var(--shadow-card);
+  max-width: 680px;
+  margin-inline: auto;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(201, 47, 64, 0.14) 0%, rgba(18, 20, 26, 0) 62%),
+    var(--surface-1);
+  border: 1px solid rgba(201, 47, 64, 0.42);
+  border-radius: 20px;
+  padding: 1.5rem 1.2rem;
+  box-shadow:
+    0 18px 40px -12px rgba(0, 0, 0, 0.78),
+    0 0 28px -8px rgba(201, 47, 64, 0.22);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1702,10 +1814,20 @@ ul {
 }
 
 .dashed-offer-card__pricing {
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(180deg, rgba(25, 27, 32, 0.98) 0%, rgba(14, 16, 21, 0.98) 100%);
+  border: 1px solid rgba(201, 47, 64, 0.45);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 10px 24px -10px rgba(0, 0, 0, 0.65);
 }
 
 .dashed-offer-card__price-compare {
@@ -2053,20 +2175,139 @@ ul {
 }
 
 /* ==========================================================================
-   SEÇÃO 12 — FAQ (DÚVIDAS FREQUENTES + CORRIDA DE POLVINHOS)
+   SEÇÃO 12 — FAQ (DÚVIDAS FREQUENTES + CORRIDA DE POLVINHOS PC & MOBILE)
    ========================================================================== */
 .section--faq {
   overflow: hidden;
 }
 
 .faq-stage {
-  position: relative;
-  max-width: 1200px;
+  max-width: 1180px;
   margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: grid;
+  grid-template-columns: clamp(50px, 13vw, 132px) minmax(0, 780px) clamp(50px, 13vw, 132px);
+  align-items: stretch;
+  justify-content: center;
+  gap: clamp(0.42rem, 2.2vw, 1.85rem);
+}
+
+.faq-stage__center.container {
+  width: 100%;
+  max-width: 780px;
+  padding-inline: 0;
+  margin-inline: 0;
 }
 
 .faq-racer-track {
-  display: none;
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.faq-racer {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate3d(-50%, -100%, 0);
+  width: 100%;
+  max-width: 122px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  will-change: top, transform;
+}
+
+.faq-racer--right {
+  animation: faqRaceRight 8.8s infinite;
+}
+
+.faq-racer--left {
+  animation: faqRaceLeft 8.8s infinite;
+}
+
+.faq-racer__glow {
+  position: absolute;
+  inset: 8% 4% 10% 4%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(201, 47, 64, 0.55) 0%,
+    rgba(159, 32, 51, 0.3) 48%,
+    rgba(13, 14, 17, 0) 76%
+  );
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.faq-racer__img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 8px 18px rgba(201, 47, 64, 0.56))
+    drop-shadow(0 0 10px rgba(159, 32, 51, 0.38));
+  animation: faqRacerSwim 1.1s ease-in-out infinite alternate;
+}
+
+.faq-racer--right .faq-racer__img {
+  animation: faqRacerSwimMirrored 1.1s ease-in-out infinite alternate;
+}
+
+@keyframes faqRaceLeft {
+  0% {
+    top: 100%;
+    transform: translate3d(-50%, -100%, 0);
+    animation-timing-function: cubic-bezier(0.2, 0.56, 0.44, 0.98);
+  }
+  50% {
+    top: 0%;
+    transform: translate3d(-50%, 0%, 0);
+    animation-timing-function: cubic-bezier(0.42, 0.06, 0.56, 0.96);
+  }
+  100% {
+    top: 100%;
+    transform: translate3d(-50%, -100%, 0);
+  }
+}
+
+@keyframes faqRaceRight {
+  0% {
+    top: 100%;
+    transform: translate3d(-50%, -100%, 0);
+    animation-timing-function: cubic-bezier(0.38, 0.28, 0.42, 0.98);
+  }
+  50% {
+    top: 0%;
+    transform: translate3d(-50%, 0%, 0);
+    animation-timing-function: cubic-bezier(0.42, 0.06, 0.56, 0.96);
+  }
+  100% {
+    top: 100%;
+    transform: translate3d(-50%, -100%, 0);
+  }
+}
+
+@keyframes faqRacerSwim {
+  0% {
+    transform: scale(0.985) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1.02) rotate(3deg);
+  }
+}
+
+@keyframes faqRacerSwimMirrored {
+  0% {
+    transform: scaleX(-1) scale(0.985) rotate(-3deg);
+  }
+  100% {
+    transform: scaleX(-1) scale(1.02) rotate(3deg);
+  }
 }
 
 .faq-list {
@@ -2674,75 +2915,6 @@ ul {
   }
 }
 
-/* Pistas dos Polvinhos Corredores na Seção FAQ em telas largas (>= 1120px) */
-@keyframes faqRacerLeft {
-  0%, 100% {
-    transform: translateY(0) rotate(-4deg);
-  }
-  50% {
-    transform: translateY(210px) rotate(5deg);
-  }
-}
-
-@keyframes faqRacerRight {
-  0%, 100% {
-    transform: translateY(190px) scaleX(-1) rotate(-4deg);
-  }
-  50% {
-    transform: translateY(0) scaleX(-1) rotate(5deg);
-  }
-}
-
-@media (min-width: 1120px) {
-  .faq-racer-track {
-    display: flex;
-    position: absolute;
-    top: 80px;
-    bottom: 60px;
-    width: 130px;
-    pointer-events: none;
-    justify-content: center;
-  }
-
-  .faq-racer-track--left {
-    left: 0;
-  }
-
-  .faq-racer-track--right {
-    right: 0;
-  }
-
-  .faq-racer {
-    position: relative;
-    width: 120px;
-    height: 110px;
-  }
-
-  .faq-racer__glow {
-    position: absolute;
-    inset: 8px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(224, 58, 77, 0.42) 0%, rgba(201, 47, 64, 0) 70%);
-    filter: blur(10px);
-  }
-
-  .faq-racer__img {
-    position: relative;
-    z-index: 1;
-    width: 116px;
-    height: auto;
-    filter: drop-shadow(0 12px 20px rgba(201, 47, 64, 0.38));
-  }
-
-  .faq-racer--left {
-    animation: faqRacerLeft 5.4s ease-in-out infinite;
-  }
-
-  .faq-racer--right {
-    animation: faqRacerRight 4.8s ease-in-out infinite;
-  }
-}
-
 /* MOBILE ONLY (<= 767px): Carregamento LED automático e sequencial no scroll (1.65s) */
 @keyframes mobileCardLedSweep {
   0% {
@@ -2762,6 +2934,818 @@ ul {
 }
 
 @media (max-width: 767px) {
+  :root {
+    --gutter: 1rem;
+    --section-py: 3.4rem;
+  }
+
+  /* ========================================================================
+     LAYOUT MOBILE AREJADO, LEGÍVEL E BEM SEPARADO (SEM EXAGERO DE COMPACTAÇÃO)
+     ======================================================================== */
+  main > .section {
+    padding-top: 3.2rem;
+    padding-bottom: 3.5rem;
+    scroll-margin-top: 58px;
+  }
+
+  .site-header__inner {
+    min-height: 58px;
+  }
+
+  .brand__logo-badge {
+    height: 35px;
+  }
+
+  .site-header__cta {
+    min-height: 36px;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.76rem;
+    border-radius: 8px;
+  }
+
+  .section-header-center {
+    margin-bottom: 1.75rem;
+  }
+
+  .display-heading {
+    font-size: clamp(1.32rem, 5.3vw, 1.68rem);
+    line-height: 1.22;
+  }
+
+  .bracket-subtitle {
+    margin-top: 0.55rem;
+    font-size: 0.88rem;
+  }
+
+  .section-subcopy {
+    margin-top: 0.75rem;
+    font-size: 0.92rem;
+    line-height: 1.54;
+  }
+
+  .section-pill-banner {
+    padding: 0.65rem 0.95rem;
+    margin-bottom: 1.65rem;
+    font-size: 0.8rem;
+    gap: 0.55rem;
+    border-radius: 8px;
+  }
+
+  .section-pill-banner__icon,
+  .section-pill-banner__logo {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cta-glow-wrap {
+    margin-top: 1.65rem;
+  }
+
+  .btn-glow-red {
+    min-height: 54px;
+    padding: 0.9rem 1.4rem;
+    font-size: clamp(0.9rem, 3.7vw, 1rem);
+    border-radius: 12px;
+  }
+
+  /* ========================================================================
+     SEÇÃO 01 — HERO MOBILE (PREENCHIMENTO EQUILIBRADO DA 1ª TELA)
+     ======================================================================== */
+  .hero-showcase {
+    min-height: calc(100svh - 58px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: clamp(1rem, 2.6svh, 1.8rem);
+    padding-bottom: clamp(2.4rem, 5.5svh, 3.4rem);
+  }
+
+  .hero-visual-stage {
+    max-width: 330px;
+    padding-right: 16px;
+  }
+
+  .hero-floating-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .hero-floating-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hero-floating-connector {
+    height: 12px;
+  }
+
+  .hero-mascot-centerpiece__img {
+    width: clamp(188px, 50vw, 232px);
+  }
+
+  .hero-showcase__brand {
+    margin-top: -0.4rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-showcase__logo {
+    height: 46px;
+  }
+
+  .hero-showcase__title {
+    font-size: clamp(1.46rem, 6.1vw, 1.82rem);
+    line-height: 1.18;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-showcase__subtitle {
+    font-size: clamp(0.94rem, 3.8vw, 1.04rem);
+    line-height: 1.52;
+    max-width: 36ch;
+  }
+
+  /* ========================================================================
+     SEÇÃO 02 — ECOSSISTEMA MULTI-TELAS (AREJADO E LEGÍVEL)
+     ======================================================================== */
+  .ecosystem-showcase {
+    padding: 1.15rem 0.9rem;
+    gap: 0.95rem;
+    border-radius: 18px;
+  }
+
+  .ecosystem-bg-screens {
+    gap: 0.55rem;
+  }
+
+  .eco-screen {
+    padding: 0.5rem;
+    border-radius: 9px;
+  }
+
+  .eco-screen__bar {
+    font-size: 0.62rem;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.32rem;
+  }
+
+  .eco-mini-item {
+    font-size: 0.56rem;
+    padding: 0.2rem 0.34rem;
+  }
+
+  .ecosystem-front-devices {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  /* ========================================================================
+     SEÇÃO 03 — 7 CARDS BEM SEPARADOS + BLOCO ANIMADO CTRL+C / CTRL+V EM DESTAQUE
+     ======================================================================== */
+  .feature-badge-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.45rem;
+    margin-top: 1.75rem;
+  }
+
+  .feature-badge-card {
+    padding: 1.55rem 1.15rem 1.35rem;
+    border-radius: 12px;
+  }
+
+  .feature-badge-card__corner-icon {
+    top: -14px;
+    right: 14px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .feature-badge-card__corner-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .feature-badge-card__pill-title {
+    min-width: 180px;
+    max-width: 82%;
+    padding: 0.48rem 0.95rem;
+    margin-bottom: 0.85rem;
+    font-size: 0.84rem;
+    border-radius: 6px;
+  }
+
+  .feature-badge-card__desc {
+    font-size: 0.92rem;
+    line-height: 1.52;
+  }
+
+  /* Palco de Animação Dedicado para o CTRL + C / CTRL + V no Mobile */
+  .ctrl-how-block {
+    min-height: 68svh;
+    margin-top: 2.8rem;
+    padding: 2.6rem 1.15rem;
+    border-radius: 20px;
+    gap: 1.65rem;
+  }
+
+  .ctrl-how-block__title {
+    font-size: 1.42rem;
+  }
+
+  .ctrl-keys-stage {
+    flex-direction: column;
+    gap: 1.35rem;
+  }
+
+  .ctrl-keys-rows {
+    gap: 1rem;
+  }
+
+  .ctrl-key-row {
+    gap: 0.75rem;
+  }
+
+  .keycap {
+    border-radius: 16px;
+    padding: 6px 8px 13px;
+  }
+
+  .keycap--ctrl .keycap__top {
+    min-width: 106px;
+    height: 60px;
+    padding-inline: 0.95rem;
+    font-size: 1.4rem;
+    border-radius: 11px;
+  }
+
+  .keycap--accent .keycap__top {
+    width: 72px;
+    height: 60px;
+    font-size: 1.75rem;
+    border-radius: 11px;
+  }
+
+  .keycap-plus {
+    font-size: 1.65rem;
+  }
+
+  .ctrl-mascot {
+    width: 116px;
+  }
+
+  .ctrl-how-block__caption {
+    font-size: 0.96rem;
+    line-height: 1.44;
+  }
+
+  /* ========================================================================
+     SEÇÃO 05 — NA PRÁTICA (CARDS WHATSAPP & DIRECT BEM SEPARADOS E LEGÍVEIS)
+     ======================================================================== */
+  .chat-proof-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .chat-card {
+    padding: 1rem 0.95rem;
+    border-radius: 12px;
+    gap: 0.6rem;
+  }
+
+  /* ========================================================================
+     SEÇÃO 06 — POR DENTRO DO PROMPTOS (CARDS COMPACTOS, CONECTADOS E SUTIS)
+     ======================================================================== */
+  #por-dentro {
+    padding-block: 1.85rem 2.1rem;
+  }
+
+  #por-dentro .section-pill-banner {
+    margin-bottom: 0.85rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.74rem;
+  }
+
+  #por-dentro .section-header-center {
+    margin-bottom: 0.95rem;
+  }
+
+  .sample-eyebrow {
+    font-size: 0.8rem;
+    line-height: 1.32;
+  }
+
+  .down-arrow-anim {
+    font-size: 1.25rem;
+    margin-block: 0.2rem;
+  }
+
+  .scope-stats-bar {
+    gap: 0.45rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .scope-stat-pill {
+    padding: 0.48rem 0.55rem;
+    border-radius: 10px;
+    gap: 0.12rem;
+  }
+
+  .scope-stat-pill__num {
+    font-size: 1.12rem;
+  }
+
+  .scope-stat-pill__label {
+    font-size: 0.65rem;
+    line-height: 1.2;
+  }
+
+  .library-mosaic-boards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.48rem;
+    margin-bottom: 1rem;
+  }
+
+  .mosaic-board {
+    padding: 0.48rem;
+    border-radius: 10px;
+  }
+
+  .mosaic-board__grid {
+    gap: 0.3rem;
+  }
+
+  .mosaic-item {
+    padding: 0.3rem 0.4rem;
+    border-radius: 6px;
+    gap: 0.28rem;
+    align-items: center;
+  }
+
+  .mosaic-item span {
+    font-size: 0.78rem;
+    margin-top: 0;
+  }
+
+  .mosaic-item strong {
+    font-size: 0.6rem;
+    line-height: 1.18;
+  }
+
+  .mosaic-item small {
+    display: none;
+  }
+
+  .specific-prompts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.52rem;
+  }
+
+  .specific-prompt-card {
+    padding: 0.68rem 0.82rem;
+    border-radius: 10px;
+    border-left: 3px solid rgba(224, 58, 77, 0.75);
+    gap: 0.22rem;
+  }
+
+  .specific-prompt-card__line {
+    display: none;
+  }
+
+  .specific-prompt-card__title {
+    font-size: 0.82rem;
+    line-height: 1.24;
+  }
+
+  .specific-prompt-card__desc {
+    font-size: 0.73rem;
+    line-height: 1.34;
+    color: #B8C2D0;
+  }
+
+  /* ========================================================================
+     SEÇÃO 07 — MEGA-PROMPTS ESPECIALIZADOS (FOLHAS COMPLETAS E LEGÍVEIS)
+     ======================================================================== */
+  .mega-prompt-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+  }
+
+  .mega-doc-card {
+    padding: 1.05rem 0.95rem;
+    border-radius: 12px;
+  }
+
+  /* ========================================================================
+     SEÇÃO 08 — PRA QUEM É O PROMPTOS? (5 CARDS COMPACTOS E BEM DISTRIBUÍDOS)
+     ======================================================================== */
+  #para-quem {
+    padding-block: 1.75rem 2rem;
+  }
+
+  .audience-showcase-header {
+    margin-bottom: 0.9rem;
+    gap: 0.65rem;
+  }
+
+  #para-quem .display-heading {
+    font-size: clamp(1.18rem, 4.8vw, 1.42rem);
+    line-height: 1.18;
+  }
+
+  .spinning-mascot-badge {
+    width: 66px;
+    height: 66px;
+  }
+
+  .numbered-audience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.58rem;
+  }
+
+  .numbered-audience-card {
+    padding: 0.72rem 0.85rem;
+    border-radius: 10px;
+    gap: 0.32rem;
+  }
+
+  .numbered-audience-card__top {
+    gap: 0.55rem;
+  }
+
+  .numbered-audience-card__num {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+  }
+
+  .numbered-audience-card__title {
+    font-size: 0.82rem;
+    line-height: 1.2;
+  }
+
+  .numbered-audience-card__desc {
+    font-size: 0.76rem;
+    line-height: 1.35;
+  }
+
+  #para-quem .cta-glow-wrap {
+    margin-top: 1.1rem;
+  }
+
+  /* ========================================================================
+     SEÇÃO 09 — COMPARATIVO SEM vs COM O PROMPTOS (SEPARADOS E LARGURA TOTAL)
+     ======================================================================== */
+  .before-after-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 1.45rem;
+  }
+
+  .comparison-list-block {
+    padding: 1.35rem 1.1rem;
+    border-radius: 14px;
+  }
+
+  .comparison-list-block__title {
+    font-size: 1.18rem;
+    line-height: 1.25;
+    margin-bottom: 1.1rem;
+  }
+
+  .vs-checklist li {
+    gap: 0.75rem;
+    padding-block: 0.78rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .vs-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+  }
+
+  /* ========================================================================
+     SEÇÃO 10 — OFERTA ESPECIAL OTIMIZADA PARA CABER EM 1 TELA NO MOBILE
+     ======================================================================== */
+  #oferta-final {
+    padding-block: 0.75rem 0.9rem;
+    min-height: calc(100svh - 58px);
+    display: flex;
+    align-items: center;
+  }
+
+  #oferta-final > .container {
+    width: 100%;
+  }
+
+  .dashed-offer-card {
+    padding: 0.88rem 0.82rem;
+    border-radius: 18px;
+    gap: 0.55rem;
+  }
+
+  .dashed-offer-card__brand-hero {
+    gap: 0.35rem;
+  }
+
+  .dashed-offer-card__logo-badge {
+    height: 35px;
+  }
+
+  .dashed-offer-card__mascot {
+    margin-block: 0;
+  }
+
+  .dashed-offer-card__mascot-img {
+    width: 62px;
+  }
+
+  .offer-mini-showcase__tablet {
+    padding: 0.55rem 0.6rem;
+    border-radius: 12px;
+  }
+
+  .offer-mini-showcase__bar {
+    margin-bottom: 0.42rem;
+    padding-bottom: 0.35rem;
+  }
+
+  .offer-mini-showcase__bar small {
+    font-size: 0.58rem;
+  }
+
+  .offer-mini-showcase__pills {
+    gap: 0.32rem;
+  }
+
+  .offer-mini-showcase__pills span {
+    padding: 0.34rem 0.38rem;
+    font-size: 0.62rem;
+    border-radius: 7px;
+  }
+
+  .offer-summary-box {
+    padding: 0.62rem 0.65rem;
+    border-radius: 12px;
+  }
+
+  .offer-summary-box__head {
+    gap: 0.45rem;
+    margin-bottom: 0.42rem;
+    padding-bottom: 0.38rem;
+    font-size: 0.72rem;
+  }
+
+  .offer-summary-box__avatar {
+    width: 22px;
+    height: 22px;
+  }
+
+  .offer-summary-box__list {
+    gap: 0.32rem;
+  }
+
+  .offer-summary-box__list li {
+    gap: 0.42rem;
+    font-size: 0.68rem;
+    line-height: 1.28;
+  }
+
+  .offer-summary-check {
+    width: 16px;
+    height: 16px;
+    font-size: 0.6rem;
+  }
+
+  .dashed-offer-card__pricing {
+    padding: 0.55rem 0.75rem;
+    border-radius: 12px;
+  }
+
+  .dashed-offer-card__price-compare {
+    gap: 0.45rem;
+  }
+
+  .price-old {
+    font-size: 0.78rem;
+  }
+
+  .price-new {
+    font-size: 1.9rem;
+  }
+
+  .price-new small {
+    font-size: 0.85rem;
+  }
+
+  .price-discount-badge {
+    padding: 0.2rem 0.48rem;
+    font-size: 0.62rem;
+  }
+
+  .dashed-offer-card__installments {
+    margin-top: 0.15rem;
+    font-size: 0.74rem;
+  }
+
+  .dashed-offer-card__cta-wrap {
+    gap: 0.38rem;
+  }
+
+  .dashed-offer-card__cta-wrap .btn-glow-red {
+    min-height: 46px;
+    padding: 0.72rem 1rem;
+    font-size: 0.78rem;
+  }
+
+  .dashed-offer-card__footnote {
+    font-size: 0.56rem;
+    line-height: 1.3;
+  }
+
+  /* ========================================================================
+     SEÇÃO 11 — GARANTIA PREENCHENDO 100% DA TELA MOBILE (SEM VAZAR PRÓXIMA SEÇÃO)
+     ======================================================================== */
+  #garantia {
+    padding-block: 1.05rem 1.2rem;
+    min-height: calc(100svh - 58px);
+    display: flex;
+    align-items: stretch;
+  }
+
+  #garantia > .container {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .guarantee-box {
+    width: 100%;
+    min-height: calc(100svh - 58px - 2.25rem);
+    justify-content: space-between;
+    padding: 1.65rem 1.15rem;
+    border-radius: 20px;
+    gap: 0.95rem;
+  }
+
+  .guarantee-box__pill {
+    padding: 0.36rem 0.95rem;
+    font-size: 0.7rem;
+  }
+
+  .guarantee-box__title {
+    font-size: clamp(1.32rem, 5.2vw, 1.56rem);
+    line-height: 1.2;
+  }
+
+  .guarantee-seal {
+    margin-block: 0.2rem;
+  }
+
+  .guarantee-seal__outer {
+    width: 142px;
+    height: 142px;
+    padding: 8px;
+  }
+
+  .guarantee-seal__top-arc {
+    font-size: 0.56rem;
+  }
+
+  .guarantee-seal__number {
+    font-size: 3rem;
+    margin-block: 0.06rem;
+  }
+
+  .guarantee-seal__unit {
+    font-size: 0.78rem;
+  }
+
+  .guarantee-seal__bottom-arc {
+    font-size: 0.5rem;
+    margin-top: 0.14rem;
+  }
+
+  .guarantee-box__copy {
+    gap: 0.72rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .guarantee-box__bullets {
+    gap: 0.48rem;
+    padding-block: 0.18rem;
+  }
+
+  .guarantee-box__bullets li {
+    font-size: 0.82rem;
+    line-height: 1.38;
+  }
+
+  .guarantee-box__closing {
+    font-size: 0.86rem;
+    padding-top: 0.2rem;
+  }
+
+  /* ========================================================================
+     SEÇÃO 12 — FAQ PREENCHENDO 100% DA TELA MOBILE (SEM VAZAR O RODAPÉ)
+     ======================================================================== */
+  #faq {
+    padding-block: 1.45rem 1.85rem;
+    min-height: calc(100svh - 58px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .faq-stage {
+    width: 100%;
+    flex: 1;
+    padding-inline: 0.55rem;
+    grid-template-columns: clamp(44px, 12.5vw, 60px) minmax(0, 1fr) clamp(44px, 12.5vw, 60px);
+    gap: 0.38rem;
+    align-items: stretch;
+  }
+
+  .faq-stage__center.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #faq .section-header-center {
+    margin-bottom: 1.25rem;
+  }
+
+  #faq .section-pill-banner {
+    margin-bottom: 1rem;
+    padding: 0.52rem 0.85rem;
+    font-size: 0.72rem;
+  }
+
+  #faq .display-heading {
+    font-size: clamp(1.24rem, 5vw, 1.48rem);
+    line-height: 1.2;
+  }
+
+  #faq .section-subcopy {
+    margin-top: 0.55rem;
+    font-size: 0.82rem;
+    line-height: 1.44;
+  }
+
+  .faq-list {
+    gap: 0.68rem;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  .faq-item {
+    border-radius: 12px;
+  }
+
+  .faq-item__question {
+    padding: 0.94rem 0.88rem;
+    min-height: 50px;
+    gap: 0.55rem;
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
+
+  .faq-item__icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+  }
+
+  .faq-item__icon::before {
+    width: 10px;
+  }
+
+  .faq-item__icon::after {
+    height: 10px;
+  }
+
+  .faq-item__answer {
+    padding: 0.72rem 0.88rem 0.88rem;
+    font-size: 0.78rem;
+    line-height: 1.46;
+  }
+
+  /* ========================================================================
+     CARREGAMENTO LED AUTOMÁTICO E SEQUENCIAL NO MOBILE
+     ======================================================================== */
   .card-led-bar {
     stroke-width: 2.2px;
     opacity: 0;
