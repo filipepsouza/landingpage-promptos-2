@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="./styles.css?v=20261023b" />
+  <link rel="stylesheet" href="./styles.css?v=20261023c" />
 </head>
 <body>
   <!-- Skip Link -->
@@ -1219,18 +1219,43 @@
             </ul>
           </div>
 
-          <!-- Bloco de Preço Oficial (Único Lugar da Página com Preço + Modal de Promoção) -->
-          <div class="dashed-offer-card__pricing">
-            <div class="dashed-offer-card__price-compare">
-              <span class="price-old">R$ 149,00</span>
-              <span class="price-new">
-                <small>R$</small>47<small>,90</small>
-              </span>
-              <span class="price-discount-badge">68% OFF</span>
+          <!-- Card de Produto Estilo Checkout / Order Bump (Com Foto 3D da Biblioteca + Preço) -->
+          <div class="checkout-product-card">
+            <div class="checkout-product-card__banner">
+              <span>🔥 OFERTA ESPECIAL LIBERADA • ACESSO COMPLETO IMEDIATO</span>
             </div>
-            <p class="dashed-offer-card__installments">
-              ou dividir em até <strong>11x de R$ 5,34</strong>
-            </p>
+            <div class="checkout-product-card__body">
+              <div class="checkout-product-card__thumb">
+                <img
+                  src="./assets/capa-produto-promptos.jpg"
+                  alt="Ícone da Biblioteca Oficial PromptOS"
+                  width="108"
+                  height="108"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="checkout-product-card__info">
+                <h3 class="checkout-product-card__title">
+                  📚 Biblioteca Oficial PromptOS <span class="text-neon-red">(De R$ 149,00 por R$ 47,90)</span>
+                </h3>
+                <p class="checkout-product-card__desc">
+                  +300 Mega-Prompts prontos para viralizar no Instagram, abordar melhor e vender 10x mais no WhatsApp, automatizar planilhas + 12 Kits por Profissão + Polvinho IA.
+                </p>
+                <div class="checkout-product-card__price-row">
+                  <div class="checkout-product-card__price-main">
+                    <strong class="checkout-product-card__inst">11x de R$ 5,34</strong>
+                    <s class="checkout-product-card__old">R$ 149,00</s>
+                    <span class="checkout-product-card__cash">ou <strong>R$ 47,90</strong> à vista</span>
+                  </div>
+                  <span class="checkout-product-card__badge">-68%</span>
+                </div>
+              </div>
+            </div>
+            <div class="checkout-product-card__bump-bar">
+              <span class="checkout-product-card__checkbox" aria-hidden="true">✓</span>
+              <span><strong>Pacote Completo Incluído:</strong> +300 Prompts + Polvinho IA + Acesso Vitalício</span>
+            </div>
           </div>
 
           <div class="dashed-offer-card__cta-wrap">
@@ -1531,35 +1556,48 @@
         <button type="button" class="promo-unlock-close" id="btn-close-promo" aria-label="Fechar aviso de promoção">✕</button>
       </div>
 
-      <div class="promo-unlock-card__hero">
-        <div class="promo-unlock-card__mascot" aria-hidden="true">
-          <span class="promo-unlock-card__mascot-glow"></span>
-          <img
-            src="./assets/mascote-polvo-480.png"
-            alt=""
-            width="74"
-            height="65"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-        <div class="promo-unlock-card__copy">
-          <h3 class="promo-unlock-card__title" id="promo-unlock-title">
-            Você desbloqueou <span>68% de desconto</span> imediato!
-          </h3>
-          <p class="promo-unlock-card__desc">
-            Seu acesso completo ao <strong>PromptOS (+300 Mega-Prompts + Polvinho IA)</strong> foi liberado na condição especial:
-          </p>
-        </div>
+      <div class="promo-unlock-card__headline">
+        <h3 class="promo-unlock-card__title" id="promo-unlock-title">
+          Você desbloqueou <span>68% de desconto</span> imediato!
+        </h3>
       </div>
 
-      <div class="promo-unlock-card__price-box">
-        <div class="promo-unlock-card__old">De <s>R$ 149,00</s> por apenas:</div>
-        <div class="promo-unlock-card__main">
-          <span class="promo-unlock-card__val">R$ 47,90</span>
-          <span class="promo-unlock-card__off">68% OFF</span>
+      <div class="checkout-product-card checkout-product-card--modal">
+        <div class="checkout-product-card__banner">
+          <span>SIM! QUERO A BIBLIOTECA COMPLETA POR SÓ R$ 47,90</span>
         </div>
-        <div class="promo-unlock-card__inst">ou dividir em até <strong>11x de R$ 5,34</strong></div>
+        <div class="checkout-product-card__body">
+          <div class="checkout-product-card__thumb">
+            <img
+              src="./assets/capa-produto-promptos.jpg"
+              alt="Ícone da Biblioteca Oficial PromptOS"
+              width="92"
+              height="92"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="checkout-product-card__info">
+            <h4 class="checkout-product-card__title">
+              📚 Biblioteca PromptOS + Polvinho IA <span class="text-neon-red">(De R$ 149 por R$ 47,90)</span>
+            </h4>
+            <p class="checkout-product-card__desc">
+              +300 Mega-Prompts para viralizar no Instagram, fechar vendas no WhatsApp, automatizar planilhas + 12 Kits por Profissão.
+            </p>
+            <div class="checkout-product-card__price-row">
+              <div class="checkout-product-card__price-main">
+                <strong class="checkout-product-card__inst">11x de R$ 5,34</strong>
+                <s class="checkout-product-card__old">R$ 149,00</s>
+                <span class="checkout-product-card__cash">ou <strong>R$ 47,90</strong> à vista</span>
+              </div>
+              <span class="checkout-product-card__badge">-68%</span>
+            </div>
+          </div>
+        </div>
+        <div class="checkout-product-card__bump-bar">
+          <span class="checkout-product-card__checkbox" aria-hidden="true">✓</span>
+          <span><strong>Acesso Vitalício Liberado:</strong> +300 Prompts + Polvinho IA</span>
+        </div>
       </div>
 
       <div class="promo-unlock-card__timer-wrap">
@@ -1659,6 +1697,6 @@
   <!-- Toast de Feedback (Cópia de Mega-Prompt / Interações) -->
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-  <script src="./app.js?v=20261023b" defer></script>
+  <script src="./app.js?v=20261023c" defer></script>
 </body>
 </html>
