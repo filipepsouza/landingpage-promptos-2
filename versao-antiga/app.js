@@ -10,9 +10,21 @@
   const PROMPTOS_CONFIG = {
     productName: 'PromptOS Essencial',
     priceBRL: 47.90,
-    checkoutUrl: '',
-    supportEmail: 'suporte@promptos.com.br'
+    checkoutUrl: 'https://pay.cakto.com.br/amwkiea'
   };
+
+  function buildCheckoutUrlWithUtms(baseUrl) {
+    const cleanBase = (baseUrl || 'https://pay.cakto.com.br/amwkiea').trim();
+    const search = window.location.search || '';
+    if (!search || search === '?') return cleanBase;
+    const separator = cleanBase.includes('?') ? '&' : '?';
+    return cleanBase + separator + search.replace(/^\?/, '');
+  }
+
+  function redirectToCheckout() {
+    const targetUrl = buildCheckoutUrlWithUtms(PROMPTOS_CONFIG.checkoutUrl);
+    window.location.href = targetUrl;
+  }
 
   /* ==========================================================================
      1. MODAIS E CHECKOUT
@@ -62,17 +74,10 @@
     });
 
     document.querySelectorAll('.js-checkout-trigger').forEach((btn) => {
+      btn.setAttribute('href', buildCheckoutUrlWithUtms(PROMPTOS_CONFIG.checkoutUrl));
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const origin = btn.getAttribute('data-cta-location') || 'offer_main';
-        const originEl = document.getElementById('checkout-trigger-origin');
-        if (originEl) originEl.textContent = origin;
-
-        if (PROMPTOS_CONFIG.checkoutUrl && PROMPTOS_CONFIG.checkoutUrl.trim() !== '') {
-          window.location.href = PROMPTOS_CONFIG.checkoutUrl;
-        } else {
-          openModal('modal-checkout-staging');
-        }
+        redirectToCheckout();
       });
     });
 
@@ -458,26 +463,56 @@
     }
 
     if (btnClosePromo) btnClosePromo.addEventListener('click', () => closePromoModal(false));
-    if (btnClaimPromo) btnClaimPromo.addEventListener('click', () => closePromoModal(true));
+    if (btnClaimPromo) {
+      btnClaimPromo.addEventListener('click', (e) => {
+        e.preventDefault();
+        redirectToCheckout();
+      });
+    }
     promoModal.addEventListener('click', (e) => {
       if (e.target === promoModal) closePromoModal(false);
     });
+
+    function triggerUnlockExperience() {
+      if (hasTriggeredUnlock) return;
+      hasTriggeredUnlock = true;
+      fireCelebrationSequence();
+      window.setTimeout(openPromoModal, 320);
+    }
+
+    // Ao clicar em qualquer botão de CTA ao longo da página (#oferta-final), rola até a oferta e já mostra a promoção
+    document.querySelectorAll('a[href="#oferta-final"]').forEach((ctaBtn) => {
+      ctaBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (offerPricingCard) {
+          offerPricingCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          offerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        triggerUnlockExperience();
+      });
+    });
+
+    const earlyTriggerSection =
+      document.getElementById('resultados') ||
+      offerSection;
 
     if ('IntersectionObserver' in window) {
       const offerObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting && !hasTriggeredUnlock) {
-              hasTriggeredUnlock = true;
               offerObserver.disconnect();
-              fireCelebrationSequence();
-              window.setTimeout(openPromoModal, 420);
+              triggerUnlockExperience();
             }
           });
         },
-        { threshold: 0.25 }
+        { threshold: 0.15 }
       );
-      offerObserver.observe(offerSection);
+      offerObserver.observe(earlyTriggerSection);
+      if (earlyTriggerSection !== offerSection) {
+        offerObserver.observe(offerSection);
+      }
     }
   }
 

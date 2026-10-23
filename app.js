@@ -10,8 +10,7 @@
   const PROMPTOS_CONFIG = {
     productName: 'PromptOS Essencial',
     priceBRL: 47.90,
-    checkoutUrl: 'https://pay.cakto.com.br/amwkiea',
-    supportEmail: 'suporte@promptos.com.br'
+    checkoutUrl: 'https://pay.cakto.com.br/amwkiea'
   };
 
   function buildCheckoutUrlWithUtms(baseUrl) {
@@ -495,7 +494,6 @@
     });
 
     const earlyTriggerSection =
-      document.getElementById('entregaveis') ||
       document.getElementById('resultados') ||
       offerSection;
 

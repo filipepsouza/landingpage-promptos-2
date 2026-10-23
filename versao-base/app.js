@@ -10,9 +10,21 @@
   const PROMPTOS_CONFIG = {
     productName: 'PromptOS Essencial',
     priceBRL: 47.90,
-    checkoutUrl: '',
-    supportEmail: 'suporte@promptos.com.br'
+    checkoutUrl: 'https://pay.cakto.com.br/amwkiea'
   };
+
+  function buildCheckoutUrlWithUtms(baseUrl) {
+    const cleanBase = (baseUrl || 'https://pay.cakto.com.br/amwkiea').trim();
+    const search = window.location.search || '';
+    if (!search || search === '?') return cleanBase;
+    const separator = cleanBase.includes('?') ? '&' : '?';
+    return cleanBase + separator + search.replace(/^\?/, '');
+  }
+
+  function redirectToCheckout() {
+    const targetUrl = buildCheckoutUrlWithUtms(PROMPTOS_CONFIG.checkoutUrl);
+    window.location.href = targetUrl;
+  }
 
   /* ==========================================================================
      1. MODAIS E CHECKOUT
@@ -62,17 +74,10 @@
     });
 
     document.querySelectorAll('.js-checkout-trigger').forEach((btn) => {
+      btn.setAttribute('href', buildCheckoutUrlWithUtms(PROMPTOS_CONFIG.checkoutUrl));
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const origin = btn.getAttribute('data-cta-location') || 'offer_main';
-        const originEl = document.getElementById('checkout-trigger-origin');
-        if (originEl) originEl.textContent = origin;
-
-        if (PROMPTOS_CONFIG.checkoutUrl && PROMPTOS_CONFIG.checkoutUrl.trim() !== '') {
-          window.location.href = PROMPTOS_CONFIG.checkoutUrl;
-        } else {
-          openModal('modal-checkout-staging');
-        }
+        redirectToCheckout();
       });
     });
 
@@ -84,7 +89,7 @@
         const sheet = card && card.querySelector('.mega-doc-card__sheet');
         const title = btn.getAttribute('data-mega-title') || 'Mega-Prompt';
         const rawText = sheet
-          ? sheet.innerText.replace('📋 Testar Cópia deste Mega-Prompt', '').trim()
+          ? sheet.textContent.replace('📋 Testar Cópia deste Mega-Prompt', '').replace(/\s+\n/g, '\n').trim()
           : title;
 
         try {
@@ -458,26 +463,56 @@
     }
 
     if (btnClosePromo) btnClosePromo.addEventListener('click', () => closePromoModal(false));
-    if (btnClaimPromo) btnClaimPromo.addEventListener('click', () => closePromoModal(true));
+    if (btnClaimPromo) {
+      btnClaimPromo.addEventListener('click', (e) => {
+        e.preventDefault();
+        redirectToCheckout();
+      });
+    }
     promoModal.addEventListener('click', (e) => {
       if (e.target === promoModal) closePromoModal(false);
     });
+
+    function triggerUnlockExperience() {
+      if (hasTriggeredUnlock) return;
+      hasTriggeredUnlock = true;
+      fireCelebrationSequence();
+      window.setTimeout(openPromoModal, 320);
+    }
+
+    // Ao clicar em qualquer botão de CTA ao longo da página (#oferta-final), rola até a oferta e já mostra a promoção
+    document.querySelectorAll('a[href="#oferta-final"]').forEach((ctaBtn) => {
+      ctaBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (offerPricingCard) {
+          offerPricingCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          offerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        triggerUnlockExperience();
+      });
+    });
+
+    const earlyTriggerSection =
+      document.getElementById('resultados') ||
+      offerSection;
 
     if ('IntersectionObserver' in window) {
       const offerObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting && !hasTriggeredUnlock) {
-              hasTriggeredUnlock = true;
               offerObserver.disconnect();
-              fireCelebrationSequence();
-              window.setTimeout(openPromoModal, 420);
+              triggerUnlockExperience();
             }
           });
         },
-        { threshold: 0.25 }
+        { threshold: 0.15 }
       );
-      offerObserver.observe(offerSection);
+      offerObserver.observe(earlyTriggerSection);
+      if (earlyTriggerSection !== offerSection) {
+        offerObserver.observe(offerSection);
+      }
     }
   }
 
@@ -520,10 +555,45 @@
     });
   }
 
+  /* ==========================================================================
+     5. BARRA DE LED DE PROGRESSO DE ROLAGEM NO HEADER (PC E MOBILE)
+     Carrega suavemente na base do header conforme o usuário rola a página.
+     ========================================================================== */
+  function initHeaderScrollLed() {
+    const ledBar = document.getElementById('header-scroll-led-bar');
+    if (!ledBar) return;
+
+    let ticking = false;
+
+    function updateScrollLed() {
+      ticking = false;
+      const docEl = document.documentElement;
+      const scrollTop = window.scrollY || docEl.scrollTop || 0;
+      const scrollableHeight = Math.max(docEl.scrollHeight - window.innerHeight, 1);
+      const ratio = Math.min(Math.max(scrollTop / scrollableHeight, 0), 1);
+      const pct = (ratio * 100).toFixed(2);
+
+      ledBar.style.width = `${pct}%`;
+      ledBar.style.opacity = scrollTop > 2 ? '1' : '0';
+    }
+
+    function onScrollOrResize() {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateScrollLed);
+      }
+    }
+
+    window.addEventListener('scroll', onScrollOrResize, { passive: true });
+    window.addEventListener('resize', onScrollOrResize, { passive: true });
+    updateScrollLed();
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initModalsAndCTAs();
     initInteractiveCards();
     initPromoOfferExperience();
     initScrollReveal();
+    initHeaderScrollLed();
   });
 })();
